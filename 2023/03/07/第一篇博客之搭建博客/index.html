@@ -79,6 +79,79 @@
 
 <p>若有类似如下显示则安装成功</p>
 <p><img src="https://p.ipic.vip/c9tzou.png" alt="输出"></p>
+<h2 id="配置hexo"><a href="#配置hexo" class="headerlink" title="配置hexo"></a>配置hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>创建博客文件夹并初始化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"><span class="built_in">mkdir</span> blog <span class="comment"># 将blog改为你喜欢的名字，下文blog均用该名字替代</span></span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>看到如下输出则成功</p>
+<p><img src="https://p.ipic.vip/gwjsmo.png" alt="输出"></p>
+<p>输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>看到如下输出则博客搭建成功， 打开浏览器，输入<a target="_blank" rel="noopener" href="http://localhost:4000/%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2">http://localhost:4000/可访问本地博客</a></p>
+<p><img src="https://p.ipic.vip/ogdnkp.png" alt="截屏2023-03-07 22.53.03"></p>
+<h1 id="将博客部署到Github"><a href="#将博客部署到Github" class="headerlink" title="将博客部署到Github"></a>将博客部署到<a target="_blank" rel="noopener" href="https://github.com/">Github</a></h1><p>在Github上新建一个仓库，Repository Name填<code>你的用户名.github.io</code>，仓库状态设为Public，然后Create Repository创建新的网站仓库。</p>
+<p>打开终端执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog </span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>在Finder(访达)中打开blog文件夹，打开其中的_config.yml文件，修改deploy部分为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: git@github.com:你的用户名/你的用户名.github.io.git</span><br><span class="line">	branch: main</span><br></pre></td></tr></table></figure>
+
+<p>修改完成后按Command + S保存,打开终端，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>第一次执行时需输入用户名和密码，注意2021年后GitHub需使用token登录，配置token很简单，请自行搜索，配置好后将token粘贴到密码处即可成功。</p>
+<p>在浏览器地址栏输入<code>你的名字.github.io</code>即可访问你的博客，注意GitHub上传有一定延迟，可能需要等待一两分钟。</p>
+<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><h3 id="按照自己的需要下载适合的主题，可以查看官网"><a href="#按照自己的需要下载适合的主题，可以查看官网" class="headerlink" title="按照自己的需要下载适合的主题，可以查看官网"></a>按照自己的需要下载适合的主题，可以查看<a target="_blank" rel="noopener" href="https://hexo.io/themes/">官网</a></h3><p>点击所选主题下蓝色字体进入github,复制其地址</p>
+<p>在项目根目录下，即”blog“文件夹下执行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// <span class="built_in">clone</span>主题代码到 themes/butterfly</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly <span class="comment">#将butterfly改为你选择的主题</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改项目配置文件，配置主题"><a href="#修改项目配置文件，配置主题" class="headerlink" title="修改项目配置文件，配置主题"></a>修改项目配置文件，配置主题</h3><p>打开blog文件夹下的_config.yml文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改配置文件，主题主题</span></span><br><span class="line">vim _config.yml </span><br></pre></td></tr></table></figure>
+
+<p>找到 <code>theme: landspace</code> 字段，将landspace改为你下载的主题并保存</p>
+<h3 id="在主目录下执行以下命令"><a href="#在主目录下执行以下命令" class="headerlink" title="在主目录下执行以下命令"></a>在主目录下执行以下命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive</span><br></pre></td></tr></table></figure>
+
+<h3 id="重新生成项目"><a href="#重新生成项目" class="headerlink" title="重新生成项目"></a>重新生成项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s </span><br></pre></td></tr></table></figure>
+
+<p>在<a target="_blank" rel="noopener" href="http://localhost:4000/%E5%8F%AF%E7%9C%8B%E5%88%B0%E6%96%B0%E7%9A%84%E4%B8%BB%E9%A2%98">http://localhost:4000/可看到新的主题</a></p>
+<h3 id="配置到云端"><a href="#配置到云端" class="headerlink" title="配置到云端"></a>配置到云端</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用hexo命令"><a href="#常用hexo命令" class="headerlink" title="常用hexo命令"></a>常用hexo命令</h2><h3 id="hexo-init"><a href="#hexo-init" class="headerlink" title="hexo init"></a>hexo init</h3><p>用于初始化本地文件夹为网站的根目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo-new"><a href="#hexo-new" class="headerlink" title="hexo new"></a>hexo new</h3><p>用于新建文章，一般可以简写为 <code>hexo n</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>layout</code> 可选参数，用以指定文章类型，若无指定则默认由配置文件中的 default_layout 选项决定</li>
+<li><code>title</code> 必填参数，用以指定文章标题，如果参数值中含有空格，则需要使用双引号包围</li>
+<li>生成的md文件位于.&#x2F;source&#x2F;_posts目录下</li>
+</ul>
+<h3 id="hexo-generate"><a href="#hexo-generate" class="headerlink" title="hexo generate"></a>hexo generate</h3><p>用于生成静态文件，一般可以简写为 <code>hexo g</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-d</code> 选项，指定生成后部署，与 <code>hexo d -g</code> 等价</li>
+</ul>
+<h3 id="hexo-server"><a href="#hexo-server" class="headerlink" title="hexo server"></a>hexo server</h3><p>用于启动本地服务器，一般可以简写为 <code>hexo s</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-p</code> 选项，指定服务器端口，默认为 4000</li>
+<li><code>-i</code> 选项，指定服务器 IP 地址，默认为 0.0.0.0</li>
+<li><code>-s</code> 选项，静态模式 ，仅提供 public 文件夹中的文件并禁用文件监视</li>
+</ul>
+<h3 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h3><p>用于部署网站，一般可以简写为 <code>hexo d</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-g</code> 选项，指定生成后部署，与 <code>hexo g -d</code> 等价</li>
+</ul>
+<h3 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h3><p>用于清理缓存文件，是一个比较常用的命令 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

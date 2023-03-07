@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-07T15:41:09.958Z</updated>
+  <updated>2023-03-07T15:48:06.097Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用maven管理java项目</title>
+    <link href="http://example.com/2023/03/07/%E4%BD%BF%E7%94%A8maven%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://example.com/2023/03/07/%E4%BD%BF%E7%94%A8maven%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE/</id>
+    <published>2023-03-07T15:48:06.000Z</published>
+    <updated>2023-03-07T15:48:06.097Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>使用hexo搭建github博客</title>

@@ -3,8 +3,8 @@ http://mrzzzz1.github.io/2023/03/07/%E4%BD%BF%E7%94%A8maven%E7%AE%A1%E7%90%86jav
 http://mrzzzz1.github.io/about/index.html
 http://mrzzzz1.github.io/
 http://mrzzzz1.github.io/tags/Maven/
-http://mrzzzz1.github.io/tags/java%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/
+http://mrzzzz1.github.io/tags/java-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/
 http://mrzzzz1.github.io/tags/%E4%BE%9D%E8%B5%96/
 http://mrzzzz1.github.io/tags/hexo-macOS/
-http://mrzzzz1.github.io/categories/Java%E5%AD%A6%E4%B9%A0/
-http://mrzzzz1.github.io/categories/Java%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/
+http://mrzzzz1.github.io/categories/Java-%E5%AD%A6%E4%B9%A0/
+http://mrzzzz1.github.io/categories/Java-%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/

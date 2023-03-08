@@ -16,12 +16,12 @@
   <meta name="author" content="Mrzzzz1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="使用 Maven 管理 java 项目什么是 MavenMaven  是专门用于管理和构建 Java 项目的工具，它的主要功能有：  提供一套标准化的项目结构  提供一套标准化的构建流程（编译，测试，打包，发布）  提供一套依赖管理机制 若只需在 IDEA 中使用 Maven 可直接跳到后面   安装和配置Maven安装使用homebrew安装，打开终端输入 1brew install maven">
+    <meta name="description" content="使用 Maven 管理 java 项目什么是 MavenMaven  是专门用于管理和构建 Java 项目的工具，它的主要功能有：  提供一套标准化的项目结构  提供一套标准化的构建流程（编译，测试，打包，发布）  提供一套依赖管理机制 若只需在 IDEA 中使用 Maven 可直接跳到后面   安装和配置 Maven安装使用 homebrew 安装，打开终端输入 1brew install ma">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Maven管理java项目">
+<meta property="og:title" content="使用 Maven 管理 java 项目">
 <meta property="og:url" content="http://mrzzzz1.github.io/2023/03/07/%E4%BD%BF%E7%94%A8maven%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE/index.html">
 <meta property="og:site_name" content="Mrzzzz1">
-<meta property="og:description" content="使用 Maven 管理 java 项目什么是 MavenMaven  是专门用于管理和构建 Java 项目的工具，它的主要功能有：  提供一套标准化的项目结构  提供一套标准化的构建流程（编译，测试，打包，发布）  提供一套依赖管理机制 若只需在 IDEA 中使用 Maven 可直接跳到后面   安装和配置Maven安装使用homebrew安装，打开终端输入 1brew install maven">
+<meta property="og:description" content="使用 Maven 管理 java 项目什么是 MavenMaven  是专门用于管理和构建 Java 项目的工具，它的主要功能有：  提供一套标准化的项目结构  提供一套标准化的构建流程（编译，测试，打包，发布）  提供一套依赖管理机制 若只需在 IDEA 中使用 Maven 可直接跳到后面   安装和配置 Maven安装使用 homebrew 安装，打开终端输入 1brew install ma">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p.ipic.vip/50k7jk.png">
 <meta property="og:image" content="https://p.ipic.vip/rikt0a.png">
@@ -31,7 +31,7 @@
 <meta property="article:modified_time" content="2023-03-08T01:52:00.000Z">
 <meta property="article:author" content="Mrzzzz1">
 <meta property="article:tag" content="Maven">
-<meta property="article:tag" content="java项目管理">
+<meta property="article:tag" content="java 项目管理">
 <meta property="article:tag" content="依赖">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://p.ipic.vip/50k7jk.png">
@@ -40,7 +40,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>使用Maven管理java项目 - Mrzzzz1</title>
+  <title>使用 Maven 管理 java 项目 - Mrzzzz1</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用Maven管理java项目"></span>
+            <span id="subtitle" data-typed-text="使用 Maven 管理 java 项目"></span>
           
         </div>
 
@@ -311,7 +311,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">使用Maven管理java项目</h1>
+            <h1 style="display: none">使用 Maven 管理 java 项目</h1>
             
             
               <div class="markdown-body">
@@ -326,15 +326,15 @@
 <p>若只需在 IDEA 中使用 Maven 可直接跳到<a href="#IntelliJ-IDEA-%E4%BD%BF%E7%94%A8-Maven">后面</a></p>
 </li>
 </ul>
-<h2 id="安装和配置Maven"><a href="#安装和配置Maven" class="headerlink" title="安装和配置Maven"></a>安装和配置Maven</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>使用homebrew安装，打开终端输入</p>
+<h2 id="安装和配置-Maven"><a href="#安装和配置-Maven" class="headerlink" title="安装和配置 Maven"></a>安装和配置 Maven</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>使用 homebrew 安装，打开终端输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew install maven<br></code></pre></td></tr></table></figure>
 
 <p>验证是否安装成功</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mvn -version<br></code></pre></td></tr></table></figure>
 
-<p>若出现如下输出则安装成功， 安装目录及为Maven home 所示目录,请记录其位置，后续需要使用</p>
+<p>若出现如下输出则安装成功， 安装目录及为 Maven home 所示目录,请记录其位置，后续需要使用</p>
 <p><img src="https://p.ipic.vip/50k7jk.png" srcset="/img/loading.gif" lazyload alt="截屏2023-03-08 10.09.16"></p>
-<p>若显示未找到JAVA_HOME(若未下载JDK请自行搜索下载)</p>
+<p>若显示未找到 JAVA_HOME (若未下载 JDK 请自行搜索下载)</p>
 <p>在终端输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/usr/libexec/java_home<br></code></pre></td></tr></table></figure>
 
@@ -424,12 +424,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/" class="category-chain-item">Java学习</a>
+  <a href="/categories/Java-%E5%AD%A6%E4%B9%A0/" class="category-chain-item">Java 学习</a>
   
   
     <span>></span>
     
-  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  <a href="/categories/Java-%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
   
   
 
@@ -448,7 +448,7 @@
       
         <a href="/tags/Maven/">#Maven</a>
       
-        <a href="/tags/java%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">#java项目管理</a>
+        <a href="/tags/java-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">#java 项目管理</a>
       
         <a href="/tags/%E4%BE%9D%E8%B5%96/">#依赖</a>
       
@@ -462,7 +462,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>使用Maven管理java项目</div>
+      <div>使用 Maven 管理 java 项目</div>
       <div>http://mrzzzz1.github.io/2023/03/07/使用maven管理java项目/</div>
     </div>
     <div class="license-meta">
@@ -511,8 +511,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="使用hexo搭建github博客">
-                        <span class="hidden-mobile">使用hexo搭建github博客</span>
+                      <a href="/2023/03/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="使用 hexo 搭建 Github 博客">
+                        <span class="hidden-mobile">使用 hexo 搭建 Github 博客</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -572,17 +572,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Java学习"
-        id="heading-2c09d0dcb7c261e8f7ebe4e30c7cb144" role="tab" data-toggle="collapse" href="#collapse-2c09d0dcb7c261e8f7ebe4e30c7cb144"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Java 学习"
+        id="heading-c90527d9b793f957e87d75a9f91117be" role="tab" data-toggle="collapse" href="#collapse-c90527d9b793f957e87d75a9f91117be"
         aria-expanded="true"
       >
-        Java学习
+        Java 学习
         <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-2c09d0dcb7c261e8f7ebe4e30c7cb144"
-           role="tabpanel" aria-labelledby="heading-2c09d0dcb7c261e8f7ebe4e30c7cb144">
+      <div class="category-collapse collapse show" id="collapse-c90527d9b793f957e87d75a9f91117be"
+           role="tabpanel" aria-labelledby="heading-c90527d9b793f957e87d75a9f91117be">
         
         
           
@@ -618,10 +618,10 @@
     
       
       
-        <a href="/2023/03/07/%E4%BD%BF%E7%94%A8maven%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE/" title="使用Maven管理java项目"
+        <a href="/2023/03/07/%E4%BD%BF%E7%94%A8maven%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE/" title="使用 Maven 管理 java 项目"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">使用Maven管理java项目</span>
+          <span class="category-post">使用 Maven 管理 java 项目</span>
         </a>
       
     

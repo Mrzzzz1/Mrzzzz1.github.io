@@ -30,9 +30,9 @@
 <meta property="article:published_time" content="2023-03-07T15:48:06.000Z">
 <meta property="article:modified_time" content="2023-03-08T01:52:00.000Z">
 <meta property="article:author" content="Mrzzzz1">
+<meta property="article:tag" content="java">
 <meta property="article:tag" content="Maven">
-<meta property="article:tag" content="java 项目管理">
-<meta property="article:tag" content="依赖">
+<meta property="article:tag" content="项目管理">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://p.ipic.vip/50k7jk.png">
   
@@ -333,7 +333,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mvn -version<br></code></pre></td></tr></table></figure>
 
 <p>若出现如下输出则安装成功， 安装目录及为 Maven home 所示目录,请记录其位置，后续需要使用</p>
-<p><img src="https://p.ipic.vip/50k7jk.png" srcset="/img/loading.gif" lazyload alt="截屏2023-03-08 10.09.16"></p>
+<p><img src="https://p.ipic.vip/50k7jk.png" srcset="/img/loading.gif" lazyload></p>
 <p>若显示未找到 JAVA_HOME (若未下载 JDK 请自行搜索下载)</p>
 <p>在终端输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/usr/libexec/java_home<br></code></pre></td></tr></table></figure>
@@ -361,7 +361,7 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>alimaven<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>aliyun maven<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>阿里云私服配置完毕！</p>
-<h2 id="Maven-使用"><a href="#Maven-使用" class="headerlink" title="Maven 使用"></a>Maven 使用</h2><h3 id="Maven-项目树目录"><a href="#Maven-项目树目录" class="headerlink" title="Maven 项目树目录"></a>Maven 项目树目录</h3><p><img src="https://p.ipic.vip/rikt0a.png" srcset="/img/loading.gif" lazyload alt="截屏2023-03-08 10.43.37"></p>
+<h2 id="Maven-使用"><a href="#Maven-使用" class="headerlink" title="Maven 使用"></a>Maven 使用</h2><h3 id="Maven-项目树目录"><a href="#Maven-项目树目录" class="headerlink" title="Maven 项目树目录"></a>Maven 项目树目录</h3><p><img src="https://p.ipic.vip/rikt0a.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="Maven命令行基本使用"><a href="#Maven命令行基本使用" class="headerlink" title="Maven命令行基本使用"></a>Maven命令行基本使用</h3><p>注意：以下命令需在 pom.xml 对应目录下使用</p>
 <ul>
 <li><p>compile: 编译</p>
@@ -396,9 +396,9 @@
 <p>同一生命周期内，执行后面的命令，前面的命令会自动执行</p>
 <h3 id="IntelliJ-IDEA-使用-Maven"><a href="#IntelliJ-IDEA-使用-Maven" class="headerlink" title="IntelliJ IDEA 使用 Maven"></a>IntelliJ IDEA 使用 Maven</h3><p>IDEA自带 Maven  <del>(经典白学</del></p>
 <p>点击 Intelij IDEA –&gt; Preferences 搜索 Maven 看到如下界面 </p>
-<p><img src="https://p.ipic.vip/4l2r0o.png" srcset="/img/loading.gif" lazyload alt="截屏2023-03-08 11.02.52"></p>
+<p><img src="https://p.ipic.vip/4l2r0o.png" srcset="/img/loading.gif" lazyload></p>
 <p>可将<code>Maven home path</code> ,<code>User settings file</code>, <code>Local repository</code> 换成之前设置的目录</p>
-<h4 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h4><p><img src="https://p.ipic.vip/3puoj6.png" srcset="/img/loading.gif" lazyload alt="截屏2023-03-08 11.27.12"></p>
+<h4 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h4><p><img src="https://p.ipic.vip/3puoj6.png" srcset="/img/loading.gif" lazyload></p>
 <p>Build system 选择 Maven 即可</p>
 <h4 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h4><p>打开 pom.xml 文件，在  <code>&lt;/project&gt;</code> 前 添加类似如下语句</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.13<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.1.46<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -424,12 +424,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Java-%E5%AD%A6%E4%B9%A0/" class="category-chain-item">Java 学习</a>
+  <a href="/categories/java-%E5%AD%A6%E4%B9%A0/" class="category-chain-item">java 学习</a>
   
   
     <span>></span>
     
-  <a href="/categories/Java-%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  <a href="/categories/java-%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
   
   
 
@@ -446,11 +446,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/java/">#java</a>
+      
         <a href="/tags/Maven/">#Maven</a>
       
-        <a href="/tags/java-%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">#java 项目管理</a>
-      
-        <a href="/tags/%E4%BE%9D%E8%B5%96/">#依赖</a>
+        <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">#项目管理</a>
       
     </div>
   
@@ -506,6 +506,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/03/08/Mybatis%20%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" title="Mybatis 安装和使用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Mybatis 安装和使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -572,17 +578,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Java 学习"
-        id="heading-c90527d9b793f957e87d75a9f91117be" role="tab" data-toggle="collapse" href="#collapse-c90527d9b793f957e87d75a9f91117be"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="java 学习"
+        id="heading-11c2330ad4cbb1b2ae8bb6b5fe72cbee" role="tab" data-toggle="collapse" href="#collapse-11c2330ad4cbb1b2ae8bb6b5fe72cbee"
         aria-expanded="true"
       >
-        Java 学习
-        <span class="list-group-count">(1)</span>
+        java 学习
+        <span class="list-group-count">(2)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-c90527d9b793f957e87d75a9f91117be"
-           role="tabpanel" aria-labelledby="heading-c90527d9b793f957e87d75a9f91117be">
+      <div class="category-collapse collapse show" id="collapse-11c2330ad4cbb1b2ae8bb6b5fe72cbee"
+           role="tabpanel" aria-labelledby="heading-11c2330ad4cbb1b2ae8bb6b5fe72cbee">
         
         
           
@@ -604,7 +610,7 @@
         aria-expanded="true"
       >
         工具
-        <span class="list-group-count">(1)</span>
+        <span class="list-group-count">(2)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -615,6 +621,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/2023/03/08/Mybatis%20%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" title="Mybatis 安装和使用"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Mybatis 安装和使用</span>
+        </a>
+      
     
       
       

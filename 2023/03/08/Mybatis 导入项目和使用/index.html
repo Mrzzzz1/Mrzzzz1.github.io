@@ -18,7 +18,7 @@
   
     <meta name="description" content="Mybatis 导入项目和使用什么是 Mybatis My basic 是一款优秀的持久层框架，用于简化 JDBC 开发, 它支持自定义 SQL、存储过程以及高级映射。  避免硬编码，方便维护  官网 ： https:&#x2F;&#x2F;mybatis.org&#x2F;mybatis-3&#x2F;zh&#x2F;index.html   导入 Mybatis使用 Maven 导入 Mybatis 包 （ 配置 Maven ) 打开项目的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mybatis 安装和使用">
+<meta property="og:title" content="Mybatis 导入项目和使用">
 <meta property="og:url" content="http://mrzzzz1.github.io/2023/03/08/Mybatis%20%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Mrzzzz1">
 <meta property="og:description" content="Mybatis 导入项目和使用什么是 Mybatis My basic 是一款优秀的持久层框架，用于简化 JDBC 开发, 它支持自定义 SQL、存储过程以及高级映射。  避免硬编码，方便维护  官网 ： https:&#x2F;&#x2F;mybatis.org&#x2F;mybatis-3&#x2F;zh&#x2F;index.html   导入 Mybatis使用 Maven 导入 Mybatis 包 （ 配置 Maven ) 打开项目的">
@@ -29,10 +29,10 @@
 <meta property="og:image" content="https://p.ipic.vip/68coj7.png">
 <meta property="og:image" content="https://p.ipic.vip/m1d7ai.png">
 <meta property="article:published_time" content="2023-03-08T06:24:34.000Z">
-<meta property="article:modified_time" content="2023-03-09T07:26:56.129Z">
+<meta property="article:modified_time" content="2023-03-10T05:55:14.945Z">
 <meta property="article:author" content="Mrzzzz1">
-<meta property="article:tag" content="Mybatis">
 <meta property="article:tag" content="java">
+<meta property="article:tag" content="Mybatis">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://p.ipic.vip/rnswyx.png">
   
@@ -40,7 +40,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Mybatis 安装和使用 - Mrzzzz1</title>
+  <title>Mybatis 导入项目和使用 - Mrzzzz1</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Mybatis 安装和使用"></span>
+            <span id="subtitle" data-typed-text="Mybatis 导入项目和使用"></span>
           
         </div>
 
@@ -311,7 +311,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Mybatis 安装和使用</h1>
+            <h1 style="display: none">Mybatis 导入项目和使用</h1>
             
             
               <div class="markdown-body">
@@ -356,7 +356,7 @@
 <h2 id="编写查询代码"><a href="#编写查询代码" class="headerlink" title="编写查询代码"></a>编写查询代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MybatisDemo</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>      <span class="hljs-comment">//加载 mybatis 核心配置文件</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">resource</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;mybatis-config.xml&quot;</span>;<br>        <span class="hljs-type">InputStream</span> <span class="hljs-variable">inputStream</span> <span class="hljs-operator">=</span> Resources.getResourceAsStream(resource);<br>      <span class="hljs-comment">//获取 SqlSessionFactory</span><br>        <span class="hljs-type">SqlSessionFactory</span> <span class="hljs-variable">sqlSessionFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SqlSessionFactoryBuilder</span>().build(inputStream);<br>			<span class="hljs-comment">//获取 sqlSession 对象</span><br>        <span class="hljs-type">SqlSession</span> <span class="hljs-variable">sqlSession</span> <span class="hljs-operator">=</span> sqlSessionFactory.openSession();<br>      <span class="hljs-comment">//查询</span><br>        List&lt;User&gt; users = sqlSession.selectList(<span class="hljs-string">&quot;test.selectAll&quot;</span>);<br>        System.out.println(users);<br>        sqlSession.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="解决SQL映射文件警告"><a href="#解决SQL映射文件警告" class="headerlink" title="解决SQL映射文件警告"></a>解决SQL映射文件警告</h2><ul>
-<li><p>产生原因： IDEA 和数据库没有简历连接，不能识别表信息。</p>
+<li><p>产生原因： IDEA 和数据库没有建立连接，不能识别表信息。</p>
 </li>
 <li><p>解决方式：在IDEA 中配置 MySQL 数据库连接</p>
 <p><img src="https://p.ipic.vip/xfv3na.png" srcset="/img/loading.gif" lazyload></p>
@@ -379,7 +379,7 @@
 
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">&quot;com.zjt.mapper.UserMapper&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAll&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.User&quot;</span>&gt;</span><br>        select * from tb_users;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectById&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.User&quot;</span>&gt;</span><br>        select * from tb_users where id = #&#123;id&#125;;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">mapper</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><code>使用#&#123;&#125;传参</code> ，${}也可传参，但不能防止 sql 注入</p>
+<p>使用 <code>#&#123;&#125;</code> 传参 ，<code>$&#123;&#125;</code> 也可传参，但不能防止 sql 注入</p>
 </li>
 <li><p>编码</p>
 <ul>
@@ -408,18 +408,18 @@
 <h2 id="名称不一致问题"><a href="#名称不一致问题" class="headerlink" title="名称不一致问题"></a>名称不一致问题</h2><p>当数据库表中的字段名称和实体类的属性名称不一致时，不能自动封装数据</p>
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol>
 <li><p>对数据库表子段名起别名</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAll&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>        select id, brand_name brand, company_name companyName, ordered, description, status from tb_brand;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAll&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>        select id, brand_name brand, company_name companyName, ordered, description, status from tb_brand;<br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>使用 sql 片段</p>
 </li>
 </ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">sql</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;brand_column&quot;</span>&gt;</span><br>        id, brand_name brand, company_name companyName, ordered, description, status<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">sql</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAll&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>        select <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;brand_column&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span> from tb_brand;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">sql</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;brand_column&quot;</span>&gt;</span><br>  id, brand_name brand, company_name companyName, ordered, description, status<br><span class="hljs-tag">&lt;/<span class="hljs-name">sql</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAll&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>  select <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;brand_column&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span> from tb_brand;<br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
 
 <ol start="3">
 <li><p>使用 resultMap（推荐）</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">resultMap</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">id</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;id&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;brand_name&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;brandName&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;company_name&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;companyName&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">resultMap</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAll&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>        select * from tb_brand;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">resultMap</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">id</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;id&quot;</span>/&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;brand_name&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;brandName&quot;</span>/&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;company_name&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;companyName&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">resultMap</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAll&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select * from tb_brand;<br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>​				添加 resultMap , 将 select 中的 resultType 改为 resultMap,使用 id 完成主键字段映射， result 完成其他字段映射。</p>
 </li>
@@ -433,10 +433,10 @@
 <ol start="2">
 <li>CDATA 区</li>
 </ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectById&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>        select * from tb_brand where id<br>        &lt;![CDATA[<br>        &lt;<br>        ]]&gt;<br>        #&#123;id&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectById&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>  select * from tb_brand where id<br>  &lt;![CDATA[<br>        &lt;<br>        ]]&gt;<br>  #&#123;id&#125;;<br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="多参数传递"><a href="#多参数传递" class="headerlink" title="多参数传递"></a>多参数传递</h2><p>假设 查询语句为</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByCondition&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>        select * <br>        from tb_brand <br>        where status = #&#123;status&#125;<br>        and company_name like #&#123;companyName&#125;<br>        and brand_name like #&#123;brandName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByCondition&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.zjt.pojo.Brand&quot;</span>&gt;</span><br>  select * <br>  from tb_brand <br>  where status = #&#123;status&#125;<br>  and company_name like #&#123;companyName&#125;<br>  and brand_name like #&#123;brandName&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -453,34 +453,34 @@
 <h2 id="动态-SQL"><a href="#动态-SQL" class="headerlink" title="动态 SQL"></a>动态 SQL</h2><h3 id="多条件动态条件查询"><a href="#多条件动态条件查询" class="headerlink" title="多条件动态条件查询"></a>多条件动态条件查询</h3><p>用于有多个条件限制，某些条件可能没有输入</p>
 <ul>
 <li><p>使用 if </p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByCondition&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>        select *<br>        from tb_brand<br>        where <br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><br>            status = #&#123;status&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>            and company_name like #&#123;companyName&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        <br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span><br>            and brand_name like #&#123;brandName&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByCondition&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select *<br>  from tb_brand<br>  where <br>  <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><br>    status = #&#123;status&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>    and company_name like #&#123;companyName&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span><br>    and brand_name like #&#123;brandName&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>当某些条件不存在时，可能会因为 <code>and</code> 不符合 sql 语句格式报错</p>
 <h4 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h4></li>
 <li><p>在最前面加 1&#x3D;1，每个条件前加sql</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByCondition&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>        select *<br>        from tb_brand<br>        where 1=1<br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><br>            and status = #&#123;status&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>            and company_name like #&#123;companyName&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        <br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span><br>            and brand_name like #&#123;brandName&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByCondition&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select *<br>  from tb_brand<br>  where 1=1<br>  <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><br>    and status = #&#123;status&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>    and company_name like #&#123;companyName&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span><br>    and brand_name like #&#123;brandName&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>使用 <code>&lt;while&gt;</code> 替换 <code>while</code> 关键字</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByCondition&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>        select *<br>        from tb_brand<br>        <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><br>            status = #&#123;status&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        and<br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>            company_name like #&#123;companyName&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        and<br>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span><br>            brand_name like #&#123;brandName&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByCondition&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select *<br>  from tb_brand<br>  <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><br>      status = #&#123;status&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>    and<br>    <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>      company_name like #&#123;companyName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>    and<br>    <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27; &quot;</span>&gt;</span><br>      brand_name like #&#123;brandName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="单条件动态条件查询"><a href="#单条件动态条件查询" class="headerlink" title="单条件动态条件查询"></a>单条件动态条件查询</h3><p>从多个条件中选择一个条件生效</p>
 <p>使用 <code>&lt;choose&gt; &lt;when&gt; &lt;otherwise&gt;</code>  标签</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByConditionSingle&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>        select *<br>        from tb_brand<br>        where<br>        <span class="hljs-tag">&lt;<span class="hljs-name">choose</span>&gt;</span><span class="hljs-comment">&lt;!--相当于switch--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--相当于case--&gt;</span><br>                status = #&#123;status&#125;<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>                company_name like #&#123;companyName&#125;<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27;&quot;</span>&gt;</span><br>                brand_name like #&#123;brandName&#125;<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">choose</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByConditionSingle&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select *<br>  from tb_brand<br>  where<br>  <span class="hljs-tag">&lt;<span class="hljs-name">choose</span>&gt;</span><span class="hljs-comment">&lt;!--相当于switch--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--相当于case--&gt;</span><br>      status = #&#123;status&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>      company_name like #&#123;companyName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27;&quot;</span>&gt;</span><br>      brand_name like #&#123;brandName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">choose</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>当用户没有输入时 sql 语法报错</p>
 <h4 id="结解决方案"><a href="#结解决方案" class="headerlink" title="结解决方案"></a>结解决方案</h4><ol>
 <li><p>在最后加上 <code>&lt;otherwise&gt;1=1&lt;/otherwise&gt;</code> 搜索全部。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByConditionSingle&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>        select *<br>        from tb_brand<br>        where<br>        <span class="hljs-tag">&lt;<span class="hljs-name">choose</span>&gt;</span><span class="hljs-comment">&lt;!--相当于switch--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--相当于case--&gt;</span><br>                status = #&#123;status&#125;<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>                company_name like #&#123;companyName&#125;<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27;&quot;</span>&gt;</span><br>                brand_name like #&#123;brandName&#125;<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">otherwise</span>&gt;</span><br>                1=1<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">otherwise</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">choose</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByConditionSingle&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select *<br>  from tb_brand<br>  where<br>  <span class="hljs-tag">&lt;<span class="hljs-name">choose</span>&gt;</span><span class="hljs-comment">&lt;!--相当于switch--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--相当于case--&gt;</span><br>      status = #&#123;status&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>      company_name like #&#123;companyName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27;&quot;</span>&gt;</span><br>      brand_name like #&#123;brandName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">otherwise</span>&gt;</span><br>      1=1<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">otherwise</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">choose</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>使用 <code>&lt;where&gt;</code> 标签</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByConditionSingle&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>        select *<br>        from tb_brand<br>        <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">choose</span>&gt;</span><span class="hljs-comment">&lt;!--相当于switch--&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--相当于case--&gt;</span><br>                    status = #&#123;status&#125;<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>                    company_name like #&#123;companyName&#125;<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27;&quot;</span>&gt;</span><br>                    brand_name like #&#123;brandName&#125;<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">choose</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByConditionSingle&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select *<br>  from tb_brand<br>  <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">choose</span>&gt;</span><span class="hljs-comment">&lt;!--相当于switch--&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--相当于case--&gt;</span><br>        status = #&#123;status&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>        company_name like #&#123;companyName&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27;&quot;</span>&gt;</span><br>        brand_name like #&#123;brandName&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">choose</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h2><ul>
 <li><p>定义 add 方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">void</span> <span class="hljs-title function_">add</span><span class="hljs-params">(Brand brand)</span>;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>添加 sql 映射</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">insert</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;add&quot;</span>&gt;</span><br>        insert into tb_brand (brand_name, company_name, ordered, description, status)<br>        values(#&#123;brandName&#125;,#&#123;companyName&#125;,#&#123;ordered&#125;,#&#123;description&#125;,#&#123;status&#125;)<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">insert</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">insert</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;add&quot;</span>&gt;</span><br>  insert into tb_brand (brand_name, company_name, ordered, description, status)<br>  values(#&#123;brandName&#125;,#&#123;companyName&#125;,#&#123;ordered&#125;,#&#123;description&#125;,#&#123;status&#125;)<br><span class="hljs-tag">&lt;/<span class="hljs-name">insert</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>调用接口方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">BrandMapper</span> <span class="hljs-variable">mapper</span> <span class="hljs-operator">=</span> sqlSession.getMapper(BrandMapper.class);<br>mapper.add(brand);<br>sqlSession.commit();<br></code></pre></td></tr></table></figure>
@@ -526,16 +526,16 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">void</span> <span class="hljs-title function_">deleteByIds</span><span class="hljs-params">(<span class="hljs-type">int</span> [] ids)</span>;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>添加 sql 映射</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">delete</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;deleteByIds&quot;</span>&gt;</span><br>     delete from tb_brand where id<br>     in (<br>     <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;array&quot;</span> <span class="hljs-attr">item</span> = <span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span><br>         #&#123;id&#125;<br>     <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><br>     );<br> <span class="hljs-tag">&lt;/<span class="hljs-name">delete</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">delete</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;deleteByIds&quot;</span>&gt;</span><br>  delete from tb_brand where id<br>  in (<br>  <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;array&quot;</span> <span class="hljs-attr">item</span> = <span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span><br>    #&#123;id&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><br>  );<br><span class="hljs-tag">&lt;/<span class="hljs-name">delete</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>使用 <code>separator</code> 添加分隔符。</p>
 <p>mybatis会将数组参数封装为 Map 集合， 默认：key 为 array ，value 为数组，可使用 param注解替换。如</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">void</span> <span class="hljs-title function_">deleteByIds</span><span class="hljs-params">(<span class="hljs-meta">@Param(&quot;ids&quot;)</span> <span class="hljs-type">int</span> [] id)</span>;<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">delete</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;deleteByIds&quot;</span>&gt;</span><br>      delete from tb_brand where id<br>      in (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;ids&quot;</span> <span class="hljs-attr">item</span> = <span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span><br>          #&#123;id&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><br>      );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">delete</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">delete</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;deleteByIds&quot;</span>&gt;</span><br>  delete from tb_brand where id<br>  in (<br>  <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;ids&quot;</span> <span class="hljs-attr">item</span> = <span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span><br>    #&#123;id&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><br>  );<br><span class="hljs-tag">&lt;/<span class="hljs-name">delete</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>还可使用 <code>foreach</code> 标签的 <code>open</code> ， <code>close</code> 替代括号，美化代码</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">delete</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;deleteByIds&quot;</span>&gt;</span><br>    delete from tb_brand where id<br>    in <br>    <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;array&quot;</span> <span class="hljs-attr">item</span> = <span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span> <span class="hljs-attr">open</span>=<span class="hljs-string">&quot;(&quot;</span> <span class="hljs-attr">close</span>=<span class="hljs-string">&quot;)&quot;</span>&gt;</span><br>        #&#123;id&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><br>    ;<br><span class="hljs-tag">&lt;/<span class="hljs-name">delete</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">delete</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;deleteByIds&quot;</span>&gt;</span><br>  delete from tb_brand where id<br>  in <br>  <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;array&quot;</span> <span class="hljs-attr">item</span> = <span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span> <span class="hljs-attr">open</span>=<span class="hljs-string">&quot;(&quot;</span> <span class="hljs-attr">close</span>=<span class="hljs-string">&quot;)&quot;</span>&gt;</span><br>    #&#123;id&#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><br>  ;<br><span class="hljs-tag">&lt;/<span class="hljs-name">delete</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="MyBatis-传参原理"><a href="#MyBatis-传参原理" class="headerlink" title="MyBatis 传参原理"></a>MyBatis 传参原理</h2><h3 id="参数封装"><a href="#参数封装" class="headerlink" title="参数封装"></a>参数封装</h3><h4 id="单个参数"><a href="#单个参数" class="headerlink" title="单个参数"></a>单个参数</h4><ul>
 <li><p>POJO 类型：直接使用，属性名和参数占位符名称一致</p>
@@ -590,7 +590,7 @@
   
     <span>></span>
     
-  <a href="/categories/java-%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  <a href="/categories/java-%E5%AD%A6%E4%B9%A0/SQL/" class="category-chain-item">SQL</a>
   
   
 
@@ -607,9 +607,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Mybatis/">#Mybatis</a>
-      
         <a href="/tags/java/">#java</a>
+      
+        <a href="/tags/Mybatis/">#Mybatis</a>
       
     </div>
   
@@ -621,7 +621,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Mybatis 安装和使用</div>
+      <div>Mybatis 导入项目和使用</div>
       <div>http://mrzzzz1.github.io/2023/03/08/Mybatis 导入项目和使用/</div>
     </div>
     <div class="license-meta">
@@ -635,7 +635,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月9日</div>
+          <div>2023年3月10日</div>
         </div>
       
       
@@ -742,7 +742,7 @@
         aria-expanded="true"
       >
         java 学习
-        <span class="list-group-count">(2)</span>
+        <span class="list-group-count">(3)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -764,16 +764,90 @@
     
     <div class="category-sub row nomargin-x">
       <a class="category-subitem 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="工具"
-        id="heading-20dce2c6fa909a5cd62526615fe2788a" role="tab" data-toggle="collapse" href="#collapse-20dce2c6fa909a5cd62526615fe2788a"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="SQL"
+        id="heading-9778840a0100cb30c982876741b0b5a2" role="tab" data-toggle="collapse" href="#collapse-9778840a0100cb30c982876741b0b5a2"
         aria-expanded="true"
       >
-        工具
-        <span class="list-group-count">(2)</span>
+        SQL
+        <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-20dce2c6fa909a5cd62526615fe2788a"
+      <div class="category-collapse collapse show" id="collapse-9778840a0100cb30c982876741b0b5a2"
+           role="tabpanel" aria-labelledby="heading-9778840a0100cb30c982876741b0b5a2">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2023/03/08/Mybatis%20%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" title="Mybatis 导入项目和使用"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Mybatis 导入项目和使用</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Web"
+        id="heading-c6e190b284633c48e39e55049da3cce8" role="tab" data-toggle="collapse" href="#collapse-c6e190b284633c48e39e55049da3cce8"
+        aria-expanded="false"
+      >
+        Web
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-c6e190b284633c48e39e55049da3cce8"
+           role="tabpanel" aria-labelledby="heading-c6e190b284633c48e39e55049da3cce8">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2023/03/09/HTML/" title="HTML 略解"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">HTML 略解</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="工具"
+        id="heading-20dce2c6fa909a5cd62526615fe2788a" role="tab" data-toggle="collapse" href="#collapse-20dce2c6fa909a5cd62526615fe2788a"
+        aria-expanded="false"
+      >
+        工具
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-20dce2c6fa909a5cd62526615fe2788a"
            role="tabpanel" aria-labelledby="heading-20dce2c6fa909a5cd62526615fe2788a">
         
         
@@ -783,19 +857,47 @@
     
       
       
-        <a href="/2023/03/08/Mybatis%20%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" title="Mybatis 安装和使用"
-           class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">Mybatis 安装和使用</span>
-        </a>
-      
-    
-      
-      
         <a href="/2023/03/07/%E4%BD%BF%E7%94%A8maven%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE/" title="使用 Maven 管理 java 项目"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">使用 Maven 管理 java 项目</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="框架"
+        id="heading-41f1d2b62436eded1a6776504b6895d7" role="tab" data-toggle="collapse" href="#collapse-41f1d2b62436eded1a6776504b6895d7"
+        aria-expanded="true"
+      >
+        框架
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-41f1d2b62436eded1a6776504b6895d7"
+           role="tabpanel" aria-labelledby="heading-41f1d2b62436eded1a6776504b6895d7">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2023/03/08/Mybatis%20%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" title="Mybatis 导入项目和使用"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Mybatis 导入项目和使用</span>
         </a>
       
     

@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>js基础</title>
+    <link href="/2023/03/13/js%E5%9F%BA%E7%A1%80/"/>
+    <url>/2023/03/13/js%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>java 学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>HTML 略解</title>
     <link href="/2023/03/09/HTML/"/>
     <url>/2023/03/09/HTML/</url>
@@ -15,14 +40,14 @@
       
       <category>java 学习</category>
       
-      <category>Web</category>
-      
     </categories>
     
     
     <tags>
       
       <tag>Web</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -40,9 +65,9 @@
     
     <categories>
       
-      <category>计算机网络</category>
+      <category>基础</category>
       
-      <category>八股文</category>
+      <category>计算机网络</category>
       
     </categories>
     
@@ -63,10 +88,6 @@
       
       <category>java 学习</category>
       
-      <category>SQL</category>
-      
-      <category>框架</category>
-      
     </categories>
     
     
@@ -75,6 +96,8 @@
       <tag>Mybatis</tag>
       
       <tag>java</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
@@ -93,8 +116,6 @@
     <categories>
       
       <category>java 学习</category>
-      
-      <category>工具</category>
       
     </categories>
     

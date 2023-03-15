@@ -127,13 +127,6 @@
   </url>
   
   <url>
-    <loc>http://mrzzzz1.github.io/tags/http/</loc>
-    <lastmod>2023-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://mrzzzz1.github.io/tags/js/</loc>
     <lastmod>2023-03-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -141,14 +134,7 @@
   </url>
   
   <url>
-    <loc>http://mrzzzz1.github.io/tags/Maven/</loc>
-    <lastmod>2023-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://mrzzzz1.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</loc>
+    <loc>http://mrzzzz1.github.io/tags/http/</loc>
     <lastmod>2023-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -175,6 +161,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://mrzzzz1.github.io/tags/Maven/</loc>
+    <lastmod>2023-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://mrzzzz1.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2023-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -192,7 +192,7 @@
   </url>
   
   <url>
-    <loc>http://mrzzzz1.github.io/categories/java-%E5%AD%A6/</loc>
+    <loc>http://mrzzzz1.github.io/categories/java-%E5%AD%A6%E4%B9%A0/web/</loc>
     <lastmod>2023-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -200,13 +200,6 @@
   
   <url>
     <loc>http://mrzzzz1.github.io/categories/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://mrzzzz1.github.io/categories/java-%E5%AD%A6/web/</loc>
     <lastmod>2023-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

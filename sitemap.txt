@@ -22,6 +22,7 @@ http://mrzzzz1.github.io/tags/macOS/
 http://mrzzzz1.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/
 http://mrzzzz1.github.io/categories/java-%E5%AD%A6%E4%B9%A0/
 http://mrzzzz1.github.io/categories/java-%E5%AD%A6%E4%B9%A0/java-web/
-http://mrzzzz1.github.io/categories/java-%E5%AD%A6%E4%B9%A0%EF%BC%8Cweb/
+http://mrzzzz1.github.io/categories/java-%E5%AD%A6/
 http://mrzzzz1.github.io/categories/%E5%9F%BA%E7%A1%80/
+http://mrzzzz1.github.io/categories/java-%E5%AD%A6/web/
 http://mrzzzz1.github.io/categories/%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/

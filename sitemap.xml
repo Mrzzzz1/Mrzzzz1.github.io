@@ -124,13 +124,6 @@
   </url>
   
   <url>
-    <loc>http://mrzzzz1.github.io/tags/http/</loc>
-    <lastmod>2023-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://mrzzzz1.github.io/tags/Mybatis/</loc>
     <lastmod>2023-03-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -146,6 +139,20 @@
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/SQL/</loc>
+    <lastmod>2023-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://mrzzzz1.github.io/tags/http/</loc>
+    <lastmod>2023-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://mrzzzz1.github.io/tags/js/</loc>
     <lastmod>2023-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -186,17 +193,17 @@
     <priority>0.2</priority>
   </url>
   
+
+  
   <url>
-    <loc>http://mrzzzz1.github.io/tags/js/</loc>
+    <loc>http://mrzzzz1.github.io/categories/java-%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>http://mrzzzz1.github.io/categories/java-%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://mrzzzz1.github.io/categories/java-%E5%AD%A6%E4%B9%A0-java-web/</loc>
     <lastmod>2023-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

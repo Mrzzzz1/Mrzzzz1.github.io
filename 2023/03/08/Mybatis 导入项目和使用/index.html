@@ -29,10 +29,10 @@
 <meta property="og:image" content="https://p.ipic.vip/68coj7.png">
 <meta property="og:image" content="https://p.ipic.vip/m1d7ai.png">
 <meta property="article:published_time" content="2023-03-08T06:24:34.000Z">
-<meta property="article:modified_time" content="2023-03-13T13:44:15.473Z">
+<meta property="article:modified_time" content="2023-03-18T09:32:09.459Z">
 <meta property="article:author" content="Mrzzzz1">
-<meta property="article:tag" content="Mybatis">
 <meta property="article:tag" content="java">
+<meta property="article:tag" content="Mybatis">
 <meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://p.ipic.vip/rnswyx.png">
@@ -469,7 +469,7 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByConditionSingle&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select *<br>  from tb_brand<br>  where<br>  <span class="hljs-tag">&lt;<span class="hljs-name">choose</span>&gt;</span><span class="hljs-comment">&lt;!--相当于switch--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--相当于case--&gt;</span><br>      status = #&#123;status&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>      company_name like #&#123;companyName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27;&quot;</span>&gt;</span><br>      brand_name like #&#123;brandName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">choose</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>当用户没有输入时 sql 语法报错</p>
-<h4 id="结解决方案"><a href="#结解决方案" class="headerlink" title="结解决方案"></a>结解决方案</h4><ol>
+<h4 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
 <li><p>在最后加上 <code>&lt;otherwise&gt;1=1&lt;/otherwise&gt;</code> 搜索全部。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByConditionSingle&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;brandResultMap&quot;</span>&gt;</span><br>  select *<br>  from tb_brand<br>  where<br>  <span class="hljs-tag">&lt;<span class="hljs-name">choose</span>&gt;</span><span class="hljs-comment">&lt;!--相当于switch--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;status != null&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--相当于case--&gt;</span><br>      status = #&#123;status&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;companyName != null and companyName != &#x27;&#x27; &quot;</span>&gt;</span><br>      company_name like #&#123;companyName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">when</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;brandName != null and brandName != &#x27;&#x27;&quot;</span>&gt;</span><br>      brand_name like #&#123;brandName&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">when</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">otherwise</span>&gt;</span><br>      1=1<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">otherwise</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">choose</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
@@ -608,9 +608,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Mybatis/">#Mybatis</a>
-      
         <a href="/tags/java/">#java</a>
+      
+        <a href="/tags/Mybatis/">#Mybatis</a>
       
         <a href="/tags/SQL/">#SQL</a>
       
@@ -638,7 +638,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月13日</div>
+          <div>2023年3月18日</div>
         </div>
       
       
@@ -813,6 +813,15 @@
     
       
       
+        <a href="/2023/03/13/js%E5%9F%BA%E7%A1%80/" title="JS 基础"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">JS 基础</span>
+        </a>
+      
+    
+      
+      
         <a href="/2023/03/18/Jsp%E5%9F%BA%E7%A1%80/" title="JSP 基础"
            class="list-group-item list-group-item-action
            ">
@@ -844,15 +853,6 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Servlet</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/13/js%E5%9F%BA%E7%A1%80/" title="js基础"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">js基础</span>
         </a>
       
     

@@ -16,28 +16,23 @@
   <meta name="author" content="Mrzzzz1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Request Request 获取请求数据  Request 继承体系 Tomcat 需要解析浏览器请求， 封装为 request 对象，并且创建 request 对象传到 sevice 方法中  当我们的Servlet类实现的是Servlet接口的时候，service方法中的参数是ServletRequest和ServletResponse  当我们的Servlet类继承的是HttpServl">
+    <meta name="description" content="Fliter Filter: 过滤器，JavaWeb 三大组件（ Servlet , Fliter , Listener ) 之一。 Filter 可以拦截对资源的请求，从而实现一些特殊的功能。 Filter 一般完成一些通用的操作，如：权限控制，统一编码处理，敏感字符处理等。  快速入门 定义类，实现 Filter 接口，并重写其所有方法 12public class FilterDemo im">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Request &amp; Response">
-<meta property="og:url" content="http://mrzzzz1.github.io/2023/03/16/Request/index.html">
+<meta property="og:title" content="Filter&amp;Listener&amp;AJAX&amp;JSON">
+<meta property="og:url" content="http://mrzzzz1.github.io/2023/03/19/Filter&Listener/index.html">
 <meta property="og:site_name" content="Mrzzzz1">
-<meta property="og:description" content="Request Request 获取请求数据  Request 继承体系 Tomcat 需要解析浏览器请求， 封装为 request 对象，并且创建 request 对象传到 sevice 方法中  当我们的Servlet类实现的是Servlet接口的时候，service方法中的参数是ServletRequest和ServletResponse  当我们的Servlet类继承的是HttpServl">
+<meta property="og:description" content="Fliter Filter: 过滤器，JavaWeb 三大组件（ Servlet , Fliter , Listener ) 之一。 Filter 可以拦截对资源的请求，从而实现一些特殊的功能。 Filter 一般完成一些通用的操作，如：权限控制，统一编码处理，敏感字符处理等。  快速入门 定义类，实现 Filter 接口，并重写其所有方法 12public class FilterDemo im">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://p.ipic.vip/43lrdz.png">
-<meta property="og:image" content="https://p.ipic.vip/qw1qdl.png">
-<meta property="og:image" content="https://p.ipic.vip/a9gcip.png">
-<meta property="og:image" content="https://p.ipic.vip/45jncw.png">
-<meta property="article:published_time" content="2023-03-16T15:42:12.000Z">
-<meta property="article:modified_time" content="2023-03-18T09:29:01.524Z">
+<meta property="article:published_time" content="2023-03-19T10:50:06.000Z">
+<meta property="article:modified_time" content="2023-03-19T13:06:59.993Z">
 <meta property="article:author" content="Mrzzzz1">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://p.ipic.vip/43lrdz.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Request &amp; Response - Mrzzzz1</title>
+  <title>Filter&amp;Listener&amp;AJAX&amp;JSON - Mrzzzz1</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Request &amp; Response"></span>
+            <span id="subtitle" data-typed-text="Filter&amp;Listener&amp;AJAX&amp;JSON"></span>
           
         </div>
 
@@ -235,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-16 23:42" pubdate>
-          2023年3月16日 晚上
+        <time datetime="2023-03-19 18:50" pubdate>
+          2023年3月19日 晚上
         </time>
       </span>
     
@@ -247,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k 字
+          2.7k 字
         
       </span>
     
@@ -308,193 +303,103 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Request &amp; Response</h1>
+            <h1 style="display: none">Filter&amp;Listener&amp;AJAX&amp;JSON</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h1><ul>
-<li>Request 获取请求数据</li>
+                <h1 id="Fliter"><a href="#Fliter" class="headerlink" title="Fliter"></a>Fliter</h1><ul>
+<li>Filter: 过滤器，JavaWeb 三大组件（ Servlet , Fliter , Listener ) 之一。</li>
+<li>Filter 可以拦截对资源的请求，从而实现一些特殊的功能。</li>
+<li>Filter 一般完成一些通用的操作，如：权限控制，统一编码处理，敏感字符处理等。</li>
 </ul>
-<h2 id="Request-继承体系"><a href="#Request-继承体系" class="headerlink" title="Request 继承体系"></a>Request 继承体系</h2><ul>
-<li><p>Tomcat 需要解析浏览器请求， 封装为 request 对象，并且创建 request 对象传到 sevice 方法中</p>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ol>
+<li><p>定义类，实现 Filter 接口，并重写其所有方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FilterDemo</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Filter</span> &#123;<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
-<li><p>当我们的Servlet类实现的是Servlet接口的时候，service方法中的参数是ServletRequest和ServletResponse</p>
+<li><p>配置 Filter 拦截资源的路径：在类上定义 WebFilter 注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@WebFilter(&quot;/*&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FilterDemo</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Filter</span> &#123;<br></code></pre></td></tr></table></figure>
 </li>
-<li><p>当我们的Servlet类继承的是HttpServlet类的时候，doGet和doPost方法中的参数就变成HttpServletRequest和HttpServletReponse</p>
-<p><img src="https://p.ipic.vip/43lrdz.png" srcset="/img/loading.gif" lazyload alt="Request继承图"></p>
-</li>
-</ul>
-<h2 id="Request-获取请求数据"><a href="#Request-获取请求数据" class="headerlink" title="Request 获取请求数据"></a>Request 获取请求数据</h2><ol>
-<li><p>请求行 </p>
-<p><img src="https://p.ipic.vip/qw1qdl.png" srcset="/img/loading.gif" lazyload alt="请求行"></p>
+<li><p>在 doFilter 方法中处理请求</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doFilter</span><span class="hljs-params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="hljs-keyword">throws</span> IOException, ServletException &#123;<br>    System.out.println(<span class="hljs-string">&quot;FilterDemo&quot;</span>);<br>  	<span class="hljs-comment">//放行</span><br>    filterChain.doFilter(servletRequest,servletResponse);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Filter-执行流程"><a href="#Filter-执行流程" class="headerlink" title="Filter 执行流程"></a>Filter 执行流程</h2><p>请求到达 Filter –&gt; 执行放行前逻辑 –&gt; 放行 –&gt; 访问资源 –&gt; 请求回到 Filter –&gt; 执行放行后逻辑</p>
 <ul>
-<li><code>String getMethod()</code> :  获取请求方式 <code>GET</code></li>
-<li><code>String getContextPath()</code> : 获取虚拟目录（项目访问路径）<code>/request-demo</code></li>
-<li><code>StringBuffer getRequestURL()</code> : 获取统一资源定位符 <code>http://localhost:8080/request-demo/req1 </code></li>
-<li><code>String getRequestURI()</code> : 获取 URI (统一资源标识符) <code>request-demo/req1</code></li>
-<li><code>String getQueryString()</code> : 获取请求参数（GET 方式）<code>username=zhangsan</code></li>
+<li><p>放行前处理 request 数据，response 无数据</p>
+</li>
+<li><p>放行后，对 response 数据进行处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doFilter</span><span class="hljs-params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="hljs-keyword">throws</span> IOException, ServletException &#123;<br>  <span class="hljs-comment">//放行前</span><br>  System.out.println(<span class="hljs-string">&quot;放行前&quot;</span>);<br>  <span class="hljs-comment">//放行</span><br>  filterChain.doFilter(servletRequest,servletResponse);<br>  <span class="hljs-comment">//放行后</span><br>  System.out.println(<span class="hljs-string">&quot;放行后&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Filter-使用细节"><a href="#Filter-使用细节" class="headerlink" title="Filter 使用细节"></a>Filter 使用细节</h2><h3 id="Filter-拦截路径配置"><a href="#Filter-拦截路径配置" class="headerlink" title="Filter 拦截路径配置"></a>Filter 拦截路径配置</h3><ul>
+<li>拦截具体资源：<code>/index.jsp</code> 只有访问 index.jsp 的请求会被拦截</li>
+<li>目录拦截：<code>/user/*</code> 访问 &#x2F;user 下的所有资源，都会被拦截</li>
+<li>后缀名拦截：<code>*.jsp </code> 访问后缀名为 .jsp 的请求会被拦截</li>
+<li>拦截所有：<code>/*</code> ： 访问该 <code>web</code> 应用的所有资源都会被拦截</li>
 </ul>
 </li>
-<li><p>请求头</p>
-<ul>
-<li><code>String getHeader(name: String)</code> : 根据请求头名称获取值</li>
 </ul>
+<h3 id="过滤器链"><a href="#过滤器链" class="headerlink" title="过滤器链"></a>过滤器链</h3><ul>
+<li>一个 Web 应用，可以配置多个过滤器，形成过滤器链</li>
+<li>注解配置的 Filter , 优先级按照 Filter 类名字典序先后执行</li>
+</ul>
+<h1 id="Listener"><a href="#Listener" class="headerlink" title="Listener"></a>Listener</h1><ul>
+<li><p>Listener 表示监听器，时 JavaWeb 三大组件( Servlet, Filter, Listener ) 之一</p>
 </li>
-<li><p>请求体 （POST)</p>
-<ul>
-<li><code>ServletInputStream getInputStream()</code> 获取请求体字节输入流</li>
-<li><code>BufferedReader getReader()</code> : 获取请求体字符输入流</li>
+<li><p>Listener 是在 application, session, request 三个对象创建，销毁，或者向其中添加修改删除属性时自动执行代码的功能组件</p>
+</li>
+<li><p>Listener 分类：JavaWeb 中提供了8个监听器</p>
+</li>
 </ul>
-<p>获取的流不用手动关闭，随  request 对象销毁而自动关闭</p>
+<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/js/js_ajax_intro.asp">AJAX</a></h1><ul>
+<li>AJAX(Asynchronous JavaScript And XML) : 异步的 JavaScript 和 XML</li>
+</ul>
+<h2 id="AJAX作用"><a href="#AJAX作用" class="headerlink" title="AJAX作用"></a>AJAX作用</h2><ol>
+<li><p>与服务器进行数据交换： 通过 AJAX 可以给服务器发送请求，并获取服务器的响应数据</p>
+<p>使用 HTML + AJAX 替换 JSP 页面，实现前后端分离</p>
+</li>
+<li><p>异步交互：可以在不重新加载整个页面的情况下，与服务器交换数据并更新部分网页，如：联想搜索，实时校验用户名是否可用等</p>
 </li>
 </ol>
-<h3 id="统一获取请求参数"><a href="#统一获取请求参数" class="headerlink" title="统一获取请求参数"></a>统一获取请求参数</h3><p>由于 GET 方式的请求参数在请求头中， POST 方式的请求参数在请求体中，上述方法获取请求参数对应的方法不同，而使用 request 的以下方法可以统一获取请求参数</p>
-<ul>
-<li><p><code>Map&lt;String, String[]&gt; getParameterMap()</code> 获取所有参数 Map 集合</p>
+<h2 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h2><ol>
+<li><p>编写 AjaxServlet, 并使用 response 输出字符串</p>
 </li>
-<li><p><code>String[] getParameterValues(String var1)</code>  根据参数名称获取参数值（数组）</p>
+<li><p>创建 XMLHttpRequest 对象： 用于和服务器交换数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> xhttp;<br><span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">XMLHttpRequest</span>) &#123;<br>    xhttp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// code for IE6, IE5</span><br>     xhttp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ActiveXObject</span>(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
 </li>
-<li><p><code>String getParameter(String var1)</code>  根据参数名称获取单个参数值</p>
+<li><p>向服务器发送请求</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">xhttp.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;ajax_info.txt&quot;</span>, <span class="hljs-literal">true</span>);<br>xhttp.<span class="hljs-title function_">send</span>();<br></code></pre></td></tr></table></figure>
 </li>
-</ul>
-<h3 id="处理中文请求参数乱码"><a href="#处理中文请求参数乱码" class="headerlink" title="处理中文请求参数乱码"></a>处理中文请求参数乱码</h3><ul>
-<li>由于浏览器 URL 编码使用 UTF-8 格式编码，而 tomcat7 以及之前的版本解码 URL 使用 ISO-8859-1 解码，在请求中含有中文字符时会出现乱码</li>
-<li>tomcat8.0 及以后使用 UTF-8 格式解码，无需处理乱码</li>
-</ul>
-<h4 id="URL-编码"><a href="#URL-编码" class="headerlink" title="URL 编码"></a>URL 编码</h4><ol>
-<li><p>URL 编码会将字符转换为可通过因特网传输的格式。</p>
-</li>
-<li><p>URL 只能使用 <a target="_blank" rel="noopener" href="https://www.runoob.com/charsets/ref-html-ascii.html">ASCII 字符集</a>来通过因特网进行发送。</p>
-</li>
-<li><p>对于非 ASCII 字符，将字符按照编码格式转为二进制，在每个字节转成两个16进制数并在前面加<code>%</code></p>
-</li>
+<li><p>获取服务器响应数据 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">xhttp.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">readyState</span> == <span class="hljs-number">4</span> &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-property">status</span> == <span class="hljs-number">200</span>) &#123;<br>            <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;demo&quot;</span>).<span class="hljs-property">innerHTML</span> =<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">responseText</span>;<br>       &#125;<br>    &#125;;<br></code></pre></td></tr></table></figure></li>
 </ol>
-<p><img src="https://p.ipic.vip/a9gcip.png" srcset="/img/loading.gif" lazyload alt="image-20230317133545142"></p>
-<p><code>http://localhost/webDemo/?username=%E5%BC%A0%E4%B8%89</code></p>
-<ol start="5">
-<li>URL 不能包含空格。URL 编码通常使用 + 来替换空格。</li>
-</ol>
-<h4 id="POST-处理乱码"><a href="#POST-处理乱码" class="headerlink" title="POST 处理乱码"></a>POST 处理乱码</h4><p>在获取参数前设置字符输入流编码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">request.setCharacterEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);<br></code></pre></td></tr></table></figure>
+<h2 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a><a target="_blank" rel="noopener" href="https://www.axios-http.cn/">Axios</a></h2><h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><ul>
+<li>JSON: JavaScript Object Notation JavaScript 对象表示法</li>
+<li>语法简单，结构层次鲜明，多作为数据载体，在网络中进行数据传输</li>
+</ul>
+<h2 id="JSON-语法"><a href="#JSON-语法" class="headerlink" title="JSON 语法"></a>JSON 语法</h2><ul>
+<li><p>定义</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> 变量名 = &#123;<br>	<span class="hljs-string">&quot;key1&quot;</span>: value1,<br>	<span class="hljs-string">&quot;key2&quot;</span>: value2,<br>	...<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="GET-处理乱码"><a href="#GET-处理乱码" class="headerlink" title="GET 处理乱码"></a>GET 处理乱码</h4><ul>
-<li>由于 GET 方式获取请求不使用字符输入流，上述设置无法解决 GET 参数乱码问题</li>
+<p>value 的数据类型为： 数字，字符串，逻辑值(true,false)，数组（[1,2])，json对象({})</p>
+</li>
+<li><p>获取数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">变量名.<span class="hljs-property">key</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//假设 s 为 编码的 URL %E5%BC%A0%E4%B8%89</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> URLEncoder.encode(<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;utf-8&quot;</span>);<br><span class="hljs-comment">// s1 为 tomcat 解码后的 URL å¼ ä¸</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> URLDecoder.decode(s, <span class="hljs-string">&quot;iso-8859-1&quot;</span>);<br><span class="hljs-comment">//方式1 先以 iso-8859-1 格式编码，再以 utf-8 格式解码</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s2</span> <span class="hljs-operator">=</span> URLEncoder.encode(s1, <span class="hljs-string">&quot;iso-8859-1&quot;</span>);<br><span class="hljs-type">String</span> <span class="hljs-variable">s3</span> <span class="hljs-operator">=</span> URLDecoder.decode(s2, <span class="hljs-string">&quot;utf-8&quot;</span>);<span class="hljs-comment">//张三</span><br><span class="hljs-comment">//方式2 先以 iso-8859-1 格式转为字节数组，再以 utf-8 格式转为字符串</span><br><span class="hljs-type">byte</span>[] bytes = s1.getBytes(<span class="hljs-string">&quot;iso-8859-1&quot;</span>);<br><span class="hljs-type">String</span> <span class="hljs-variable">s4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(bytes, <span class="hljs-string">&quot;utf-8&quot;</span>);<span class="hljs-comment">//张三</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="一句代码解决-（-GET-POST-均可使用）"><a href="#一句代码解决-（-GET-POST-均可使用）" class="headerlink" title="一句代码解决 （ GET POST 均可使用）"></a>一句代码解决 （ GET POST 均可使用）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">username</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<br>request.getParameter(<span class="hljs-string">&quot;username&quot;</span>).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8<br>);<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="Request-请求转发"><a href="#Request-请求转发" class="headerlink" title="Request 请求转发"></a>Request 请求转发</h2><ul>
-<li><p>请求转发：一种在服务器内部的资源跳转方式</p>
-</li>
-<li><p>实现方式</p>
-<p>需求：用户请求资源A,资源A处理完将请求转发给资源B处理</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//在资源A的doGet()中调用</span><br>request.getRequestDispatcher(<span class="hljs-string">&quot;资源B路径&quot;</span>).forward(request,response);<br></code></pre></td></tr></table></figure></li>
+<h2 id="JSON-数据和-Java-对象互转"><a href="#JSON-数据和-Java-对象互转" class="headerlink" title="JSON 数据和 Java 对象互转"></a>JSON 数据和 Java 对象互转</h2><h3 id="Fastjson"><a href="#Fastjson" class="headerlink" title="Fastjson"></a>Fastjson</h3><ul>
+<li>Fastjson 是阿里巴巴提供的一个 Java 语言编写的高性能功能完善的 JSON 库，是目前 Java 语言中最快的 JSON 库，可以实现 Java 对象和 JSON 字符串的相互转换</li>
 </ul>
-<h4 id="转发时共享数据"><a href="#转发时共享数据" class="headerlink" title="转发时共享数据"></a>转发时共享数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// /RequestDemo1 的 doGet()</span><br>request.setAttribute(<span class="hljs-string">&quot;msg&quot;</span>,<span class="hljs-string">&quot;helloB&quot;</span>);<br>request.getRequestDispatcher(<span class="hljs-string">&quot;/RequestDemo2&quot;</span>).forward(request,response);<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// /RequestDemo2 的 doGet()</span><br>request.getAttribute(<span class="hljs-string">&quot;msg&quot;</span>);<span class="hljs-comment">//hello</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h1><ul>
-<li><p>使用 Response 对象设置响应数据</p>
+<h4 id="使用-Fasstjson"><a href="#使用-Fasstjson" class="headerlink" title="使用 Fasstjson"></a>使用 Fasstjson</h4><ul>
+<li><p>导入坐标</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>fastjson<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.2.62<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
-<li><p>Response 继承结构与 Request 类似</p>
-<p><img src="https://p.ipic.vip/45jncw.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>Java 对象转 JSON</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">jsonStr</span> <span class="hljs-operator">=</span> JSON.toJSONString(obj)<br></code></pre></td></tr></table></figure>
 </li>
+<li><p>JSON 转成 Java 对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> JSON.parseObject(jsonStr,User.class); <br></code></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="Response-设置响应数据"><a href="#Response-设置响应数据" class="headerlink" title="Response 设置响应数据"></a>Response 设置响应数据</h2><p>调用 response 相应方法设置响应数据</p>
-<ol>
-<li>响应行 <code>HTTP/1.1 200 OK</code><ul>
-<li><code>void setStatus(int sc)</code> : 设置响应状态码</li>
-</ul>
-</li>
-<li>响应头 <code>Content-Type:text/html</code><ul>
-<li><code>void setHeader(String name, String value)</code> : 设置响应头键值对</li>
-</ul>
-</li>
-<li>响应体<ul>
-<li><code>printWriter()</code> : 获取字符输出流</li>
-<li><code>ServletOutputStream getOutputStream()</code> : 获取字节输出流</li>
-</ul>
-</li>
-</ol>
-<h2 id="Response-完成重定向"><a href="#Response-完成重定向" class="headerlink" title="Response 完成重定向"></a>Response 完成重定向</h2><ul>
-<li><p>重定向(Redirct)：一种资源跳转方式</p>
-</li>
-<li><p>使用场景：用户请求资源A,但资源A无法完成请求，资源A将请求重定向到资源B</p>
-</li>
-<li><p>服务器向浏览器发起重定向响应， 状态码为 302，浏览器访问响应响应头中 Location 对应 URL</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//重定向</span><br><span class="hljs-comment">//设置响应状态码 302</span><br>response.setStatus(<span class="hljs-number">302</span>);<br><span class="hljs-comment">//设置响应头 Location</span><br>response.setHeader(<span class="hljs-string">&quot;Location&quot;</span>,<span class="hljs-string">&quot;/webDemo/ResponseDemo2&quot;</span>);<br><br><span class="hljs-comment">//简化写法</span><br>response.sendRedirect(<span class="hljs-string">&quot;/webDemo/ResponseDemo2&quot;</span>);<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>与请求转发不同，重定向资源路径需要加上虚拟目录</li>
-</ul>
-<h3 id="重定向与请求转发对比"><a href="#重定向与请求转发对比" class="headerlink" title="重定向与请求转发对比"></a>重定向与请求转发对比</h3><p>重定向特点</p>
-<ul>
-<li>浏览器地址栏发生变化</li>
-<li>可以重定向到任意资源，既能重定向到服务器内部，也能重定向到服务器外部</li>
-<li>两次请求，不能在多个资源使用 request 共享数据</li>
-</ul>
-<p>请求转发特点</p>
-<ul>
-<li>浏览器地址栏不发生变化</li>
-<li>只能转发到当前服务器内部资源</li>
-<li>一次请求，多个资源共享 request 数据</li>
-</ul>
-<h3 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h3><ul>
-<li>明确路径给谁使用<ol>
-<li>给浏览器使用：需要添加虚拟目录（项目访问路径）</li>
-<li>给服务器使用： 不需要添加虚拟目录</li>
-</ol>
-</li>
-<li>使用虚拟目录时使用 <code>request.getContextPath()</code> 动态获取目录</li>
-</ul>
-<h2 id="Response-响应字符数据"><a href="#Response-响应字符数据" class="headerlink" title="Response 响应字符数据"></a>Response 响应字符数据</h2><ol>
-<li><p>获取字符输出流</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">PrintWriter</span> <span class="hljs-variable">writer</span> <span class="hljs-operator">=</span> response.getWriter();<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>写数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">write.write(<span class="hljs-string">&quot;&lt;h1&gt;aaa&lt;/h1&gt;&quot;</span>);<span class="hljs-comment">//浏览器当作纯文本输出</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>若需浏览器解析为 HTML ,需设置头信息</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">response.setHeader(<span class="hljs-string">&quot;content-type&quot;</span>,<span class="hljs-string">&quot;text/html&quot;</span>);<br></code></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li><p>write 流不需要手动关闭，随 response 销毁自动关闭</p>
-</li>
-<li><p>输出中文数据需要设置流的编码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//设置响应头的同时设置输出流的字符集</span><br>response.setContentType(<span class="hljs-string">&quot;text/html;charset=utf-8&quot;</span>);<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="Response-响应字节数据"><a href="#Response-响应字节数据" class="headerlink" title="Response 响应字节数据"></a>Response 响应字节数据</h2><ol>
-<li><p>获得字节输出流</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">ServletOutputStream</span> <span class="hljs-variable">outputStream</span> <span class="hljs-operator">=</span> response.getOutputStream();<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>读取文件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">FileInputStream</span> <span class="hljs-variable">fis</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;a.jpg&quot;</span>);<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>拷贝字节流</p>
-<ul>
-<li>直接拷贝</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">byte</span>[] buf = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">1024</span>];<br><span class="hljs-type">int</span> <span class="hljs-variable">length</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><span class="hljs-keyword">while</span>((length = fis.read(buf))!=-<span class="hljs-number">1</span>) &#123;<br>    outputStream.write(buf);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li><p>使用工具类</p>
-<p>在 <code>pom.xml</code> 中导入 commons-io</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>commons-io<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>commons-io<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.6<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>调用 copy 方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">IOUtils.copy(fis,outputStream);<br></code></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>关闭文件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">fis.close()<br></code></pre></td></tr></table></figure></li>
-</ol>
 
                 
               </div>
@@ -540,8 +445,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Request &amp; Response</div>
-      <div>http://mrzzzz1.github.io/2023/03/16/Request/</div>
+      <div>Filter&amp;Listener&amp;AJAX&amp;JSON</div>
+      <div>http://mrzzzz1.github.io/2023/03/19/Filter&amp;Listener/</div>
     </div>
     <div class="license-meta">
       
@@ -554,7 +459,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月18日</div>
+          <div>2023年3月19日</div>
         </div>
       
       
@@ -585,9 +490,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/18/Jsp%E5%9F%BA%E7%A1%80/" title="JSP 基础">
+                      <a href="/2023/03/19/Vue%E7%95%A5%E8%A7%A3/" title="Vue略解">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JSP 基础</span>
+                        <span class="hidden-mobile">Vue略解</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -595,8 +500,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/16/%E8%87%AA%E5%B7%B1%E7%9C%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/" title="自己看的一些配置博客">
-                        <span class="hidden-mobile">自己看的一些配置博客</span>
+                      <a href="/2023/03/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA/" title="会话跟踪">
+                        <span class="hidden-mobile">会话跟踪</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -619,7 +524,7 @@
         var options = Object.assign(
           {"clientID":"777cb807c5d38bcb8c8c","clientSecret":"35aa09f9079a7fab059604f030a687f57aabb923","repo":"Mrzzzz1.github.io","owner":"Mrzzzz1","admin":["Mrzzzz1"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":true,"createIssueManually":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '19157bf9f25bafa20c44dadfdefeeed8'
+            id: 'd164ea6330abbe2fc4511ea58cacc3b8'
           }
         )
         var gitalk = new Gitalk(options);
@@ -713,7 +618,7 @@
       
         <a href="/2023/03/19/Filter&amp;Listener/" title="Filter&amp;Listener&amp;AJAX&amp;JSON"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">Filter&amp;Listener&amp;AJAX&amp;JSON</span>
         </a>
       
@@ -767,7 +672,7 @@
       
         <a href="/2023/03/16/Request/" title="Request &amp; Response"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">Request &amp; Response</span>
         </a>
       

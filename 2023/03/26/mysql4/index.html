@@ -16,28 +16,23 @@
   <meta name="author" content="Mrzzzz1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="HTTP HyperText Tranfer Protocol, 超文本传输协议，规定了浏览器和服务器之间数据传输的规则  HTTP 协议特点 基于 TCP 协议， 面向连接，安全 基于请求-响应模型，一次请求对应一次响应 HTTP协议是无状态的协议：对于事务处理没有记忆能力，每次请求-响应都是独立的 缺点： 多次请求不能共享数据；Java 中使用会话技术（Cookie, Session) 来解决">
+    <meta name="description" content="Mysql 进阶（一）MySQL 体系结构 连接层 最上层是一些客户端和链接服务，主要完成一些类似于连接处理，授权认证，及相关安全方案。服务器也会为安全接入的每个客户端验证它所具有的操作权限  服务层 第二层架构主要完成大多数的核心服务功能，如 SQL 接口，并完成缓存的查询，SQL 的分析和优化，部分内置函数的执行。所有跨存储引擎的功能也在这一层实现，如过程，函数等  引擎层 存储引擎真正地负责">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Http 略解">
-<meta property="og:url" content="http://mrzzzz1.github.io/2023/03/13/http%E7%95%A5%E8%A7%A3/index.html">
+<meta property="og:title" content="Mysql 进阶（一）">
+<meta property="og:url" content="http://mrzzzz1.github.io/2023/03/26/mysql4/index.html">
 <meta property="og:site_name" content="Mrzzzz1">
-<meta property="og:description" content="HTTP HyperText Tranfer Protocol, 超文本传输协议，规定了浏览器和服务器之间数据传输的规则  HTTP 协议特点 基于 TCP 协议， 面向连接，安全 基于请求-响应模型，一次请求对应一次响应 HTTP协议是无状态的协议：对于事务处理没有记忆能力，每次请求-响应都是独立的 缺点： 多次请求不能共享数据；Java 中使用会话技术（Cookie, Session) 来解决">
+<meta property="og:description" content="Mysql 进阶（一）MySQL 体系结构 连接层 最上层是一些客户端和链接服务，主要完成一些类似于连接处理，授权认证，及相关安全方案。服务器也会为安全接入的每个客户端验证它所具有的操作权限  服务层 第二层架构主要完成大多数的核心服务功能，如 SQL 接口，并完成缓存的查询，SQL 的分析和优化，部分内置函数的执行。所有跨存储引擎的功能也在这一层实现，如过程，函数等  引擎层 存储引擎真正地负责">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://p.ipic.vip/q8ak73.png">
-<meta property="og:image" content="https://p.ipic.vip/bx7ink.png">
-<meta property="og:image" content="https://p.ipic.vip/gfamzd.png">
-<meta property="article:published_time" content="2023-03-13T13:38:53.000Z">
-<meta property="article:modified_time" content="2023-03-22T08:17:17.963Z">
+<meta property="article:published_time" content="2023-03-26T05:50:41.000Z">
+<meta property="article:modified_time" content="2023-03-26T15:24:22.516Z">
 <meta property="article:author" content="Mrzzzz1">
-<meta property="article:tag" content="http">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://p.ipic.vip/q8ak73.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Http 略解 - Mrzzzz1</title>
+  <title>Mysql 进阶（一） - Mrzzzz1</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Http 略解"></span>
+            <span id="subtitle" data-typed-text="Mysql 进阶（一）"></span>
           
         </div>
 
@@ -235,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-13 21:38" pubdate>
-          2023年3月13日 晚上
+        <time datetime="2023-03-26 13:50" pubdate>
+          2023年3月26日 下午
         </time>
       </span>
     
@@ -247,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          2.2k 字
         
       </span>
     
@@ -308,168 +303,233 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Http 略解</h1>
+            <h1 style="display: none">Mysql 进阶（一）</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><ul>
-<li>HyperText Tranfer Protocol, 超文本传输协议，规定了浏览器和服务器之间数据传输的规则</li>
-</ul>
-<h2 id="HTTP-协议特点"><a href="#HTTP-协议特点" class="headerlink" title="HTTP 协议特点"></a>HTTP 协议特点</h2><ul>
-<li>基于 TCP 协议， 面向连接，安全</li>
-<li>基于请求-响应模型，一次请求对应一次响应</li>
-<li>HTTP协议是无状态的协议：对于事务处理没有记忆能力，每次请求-响应都是独立的<ul>
-<li>缺点： 多次请求不能共享数据；Java 中使用会话技术（Cookie, Session) 来解决这个问题</li>
-<li>优点：速度快</li>
-</ul>
+                <h1 id="Mysql-进阶（一）"><a href="#Mysql-进阶（一）" class="headerlink" title="Mysql 进阶（一）"></a>Mysql 进阶（一）</h1><h2 id="MySQL-体系结构"><a href="#MySQL-体系结构" class="headerlink" title="MySQL 体系结构"></a>MySQL 体系结构</h2><ul>
+<li><p>连接层</p>
+<p>最上层是一些客户端和链接服务，主要完成一些类似于连接处理，授权认证，及相关安全方案。服务器也会为安全接入的每个客户端验证它所具有的操作权限</p>
+</li>
+<li><p>服务层</p>
+<p>第二层架构主要完成大多数的核心服务功能，如 SQL 接口，并完成缓存的查询，SQL 的分析和优化，部分内置函数的执行。所有跨存储引擎的功能也在这一层实现，如过程，函数等</p>
+</li>
+<li><p>引擎层</p>
+<p>存储引擎真正地负责了 Mysql 中数据的存储和提取，服务器通过 API 和存储引擎进行通信，不同的存储引擎具有不同的功能，需要根据自己的需要选择合适的存户引擎</p>
+</li>
+<li><p>存储层</p>
+<p>主要是将数据存储在文件系统之上，并完成与存储引擎的交互</p>
 </li>
 </ul>
-<h2 id="请求数据格式"><a href="#请求数据格式" class="headerlink" title="请求数据格式"></a>请求数据格式</h2><ul>
-<li>请求行：请求数据的第一行。其中 GET 表示请求方式， &#x2F; 表示请求资源路径， HTTP&#x2F;1.1表示协议版本</li>
-<li>请求头：第二行开始，格式为 key: value 形式</li>
-<li>请求体：POST 请求的最后一部分，存放请求参数</li>
-</ul>
-<p><img src="https://p.ipic.vip/q8ak73.png" srcset="/img/loading.gif" lazyload alt="GET 请求示例"></p>
-<p><img src="https://p.ipic.vip/bx7ink.png" srcset="/img/loading.gif" lazyload alt="POST 请求示例"></p>
+<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><p>存储引擎是存储数据，建立索引，更新&#x2F;查询数据等技术的实现方式。存储引擎是基于表的，所以存储引擎也被称为表类型, Mysql 默认存储引擎为 innoDB</p>
 <ul>
-<li>GET 请求和 POST 请求的区别：<ol>
-<li>GET 请求请求参数在请求行中，没有请求体，POST 请求的请求参数在请求体中</li>
-<li>GET 请求有请求参数大小限制，POST 没有</li>
-</ol>
+<li><p>查看当前数据库支持的存储引擎</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> ENGINES;<br></code></pre></td></tr></table></figure>
 </li>
+<li><p>创建表时指定存储引擎</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> my_engine(<br>    id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY <br>) ENGINE <span class="hljs-operator">=</span> 存储引擎;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="常见的-HTTP-请求头"><a href="#常见的-HTTP-请求头" class="headerlink" title="常见的 HTTP 请求头"></a>常见的 HTTP 请求头</h3><ul>
-<li><p>Host: 表示请求的主机名</p>
+<h3 id="存储引擎特点"><a href="#存储引擎特点" class="headerlink" title="存储引擎特点"></a>存储引擎特点</h3><h4 id="innoDB"><a href="#innoDB" class="headerlink" title="innoDB"></a>innoDB</h4><ul>
+<li><p>innoDB 时一种兼顾高可靠性和高性能的通用存储引擎，在 Mysql 5.5 之后，innoDB 是 Mysql 默认存储引擎</p>
 </li>
-<li><p>User-Agent: 浏览器版本，例如 Chrome 浏览器的标识类似 Mozilla&#x2F;5.0 …</p>
-<p>Chrome&#x2F;79</p>
-</li>
-<li><p>Accept: 表示浏览器能接收的资源类型，如 <code> text/*, image/*</code> 或者 <code>*/*</code> 表示所有</p>
-</li>
-<li><p>Accept-Language: 表示浏览器偏好的语言，服务器可以据此返回不同语言的网页</p>
-</li>
-<li><p>Accept-Encoding: 表示浏览器可以支持的压缩类型，例如 gzip, deflate 等</p>
-</li>
-</ul>
-<h2 id="响应数据格式"><a href="#响应数据格式" class="headerlink" title="响应数据格式"></a>响应数据格式</h2><p><img src="https://p.ipic.vip/gfamzd.png" srcset="/img/loading.gif" lazyload alt="HTTP 响应数据示例"></p>
+<li><p>特点</p>
 <ul>
-<li><p>响应行：响应数据的第一行，其中 HTTP&#x2F;1.1 表示协议版本，200表示响应状态码，OK表示状态码描述</p>
+<li>DML 操作遵循 ACID 模型，支持事务</li>
+<li>行级锁，提高并发访问性能</li>
+<li>支持外键约束，保证数据的完整性和可靠性</li>
+</ul>
 </li>
-<li><p>响应头：第二行开始，格式为 key: value 形式</p>
+<li><p>文件</p>
+<p>xxx.ibd: xxx 代表表名，innoDB 引擎的每张表都会对应一个表空间文件，储存该表的结构（ frm, sdi ），数据和索引</p>
 </li>
-<li><p>响应体：最后一部分，存放响应数据</p>
+<li><p>逻辑结构</p>
+<p>表空间   段   区   页   行</p>
 </li>
 </ul>
-<h3 id="常见的-HTTP-响应头："><a href="#常见的-HTTP-响应头：" class="headerlink" title="常见的 HTTP 响应头："></a>常见的 HTTP 响应头：</h3><ul>
-<li>Content-Type: 表示该响应内容的类型，例如 text&#x2F;html, image&#x2F;jpeg</li>
-<li>Content-Length: 表示该响应内容的长度（字节数）</li>
-<li>Content-Encoding: 表示该响应的压缩算法，例如 gzip</li>
-<li>Cache-Control: 指示客户端应如何缓存，例如 max-age &#x3D; 300 表示最多缓存300秒</li>
+<h4 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h4><ul>
+<li><p>MyISAM 是 Mysql 早期的默认存储结构</p>
+</li>
+<li><p>特点</p>
+<ul>
+<li>不支持事务，不支持外键</li>
+<li>支持表锁，不支持行锁</li>
+<li>访问速度快</li>
 </ul>
-<h2 id="响应状态码"><a href="#响应状态码" class="headerlink" title="响应状态码"></a>响应状态码</h2><table>
+</li>
+<li><p>文件</p>
+<ul>
+<li>xxx.sdi: 存储表结构信息</li>
+<li>xxx.MYD: 存储数据</li>
+<li>xxx.MYI: 存储索引</li>
+</ul>
+</li>
+</ul>
+<h4 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h4><ul>
+<li><p>Memory 引擎的表数据存储在内存中，只能作为临时表或缓存使用</p>
+</li>
+<li><p>特点</p>
+<ul>
+<li>内存存放</li>
+<li>hash 索引（默认）</li>
+</ul>
+</li>
+<li><p>文件</p>
+<p>xxx.sdi: 储存表结构信息</p>
+</li>
+</ul>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>索引是帮助 Mysql 高效获取数据的数据结构（有序）</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><table>
 <thead>
 <tr>
-<th>状态码分类</th>
-<th>说明</th>
+<th>优势</th>
+<th>劣势</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>1xx</td>
-<td><strong>响应中</strong> – 临时状态码，表示请求已接受，告诉客户端继续请求或者如果请求已经完成则忽略它</td>
+<td>提高数据检索的效率，降低数据库的 IO 成本</td>
+<td>索引列需要占据空间</td>
 </tr>
 <tr>
-<td>2xx</td>
-<td><strong>成功</strong> – 表示请求已经被成功接收，处理已完成</td>
-</tr>
-<tr>
-<td>3xx</td>
-<td><strong>重定向</strong> – 重定向到其他地方，它让客户端再发起一个请求以完成整个处理</td>
-</tr>
-<tr>
-<td>4xx</td>
-<td><strong>客户端错误</strong> – 处理发生错误，责任在客户端，如：客户端请求一个不存在的资源，客户端未被授权，禁止访问等</td>
-</tr>
-<tr>
-<td>5xx</td>
-<td><strong>服务器端错误</strong> – 处理发生错误，责任在服务器，如：服务器抛出异常，路由错误，HTTP 版本不支持等</td>
+<td>通过索引对数据结构进行排序，降低数据排序的成本，降低 CPU 的消耗</td>
+<td>在对表进行插入，更新，删除时需要同时维护索引列，降低效率</td>
 </tr>
 </tbody></table>
-<h2 id="常见的响应状态码"><a href="#常见的响应状态码" class="headerlink" title="常见的响应状态码"></a>常见的响应状态码</h2><table>
+<h3 id="索引结构"><a href="#索引结构" class="headerlink" title="索引结构"></a>索引结构</h3><table>
 <thead>
 <tr>
-<th>状态码</th>
-<th>英文描述</th>
-<th align="left">解释</th>
+<th>索引结构</th>
+<th>描述</th>
+<th>InnoDB</th>
+<th>MyISAM</th>
+<th>Memory</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>200</td>
-<td>OK</td>
-<td align="left">客户端请求成功，即<strong>处理成功</strong>，这是我们最想看到的状态码</td>
+<td>B+ Tree 索引</td>
+<td>最常见的索引，大部分引擎支持 B+树索引</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
 </tr>
 <tr>
-<td>302</td>
-<td>Found</td>
-<td align="left">指示所请求的资源已移动到由 Location 响应头给定的 URL ,浏览器会自动重新访问到这个页面</td>
+<td>Hash 索引</td>
+<td>使用哈希表实现，只对精确匹配索引列的查询有效，不支持范围查询</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>支持</td>
 </tr>
 <tr>
-<td>304</td>
-<td>Not Modified</td>
-<td align="left">告诉客户端，请求的资源自上次取得后，服务端并未更改，直接使用本地缓存；隐式重定向</td>
+<td>R-Tree（空间索引）</td>
+<td>MyISAM 引擎的一个特殊索引类型，主要用于地理空间数据类型，使用较少</td>
+<td>不支持</td>
+<td>支持</td>
+<td>不支持</td>
 </tr>
 <tr>
-<td>400</td>
-<td>Bad Request</td>
-<td align="left">客户端请求有<strong>语法错误</strong>，不能被服务器所理解</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-<td align="left">服务器收到请求，但是<strong>拒绝提供服务</strong>，比如：没有权限访问相关资源</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found</td>
-<td align="left"><strong>请求资源不存在</strong> ，一般是 URL 输入有误，或者网站资源被删除了</td>
-</tr>
-<tr>
-<td>428</td>
-<td>Precondition Required</td>
-<td align="left">服务器要求有条件的请求，告诉客户端想要访问该资源，必须携带特定的请求头</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests</td>
-<td align="left"><strong>太多请求</strong> ，可以限制客户端请求某个资源的数量，配合 Retry-After (多长时间后可以请求)响应头一起使用</td>
-</tr>
-<tr>
-<td>431</td>
-<td>Request Header Fields Too Large</td>
-<td align="left"><strong>请求头太大</strong> ，服务器不愿意处理请求，因为它的头部字段太大，请求可以在减少请求头大小后重新提交</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed</td>
-<td align="left">请求方式有误，比如应该使用 GET 请求方式的资源，用了 POST</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error</td>
-<td align="left"><strong>服务器发生不可预期的错误</strong> ，服务器出现异常</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable</td>
-<td align="left"><strong>服务器尚未准备好处理请求</strong> ，服务器刚刚启动，还未初始化好</td>
-</tr>
-<tr>
-<td>511</td>
-<td>Network Authentication Required</td>
-<td align="left">客户端需要进行身份验证才能获得网络访问的权限</td>
+<td>Full-text（全文索引）</td>
+<td>通过建立倒排索引，快速匹配文档</td>
+<td>5.6 之后版本支持</td>
+<td>支持</td>
+<td>不支持</td>
 </tr>
 </tbody></table>
-<p>状态码大全：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/chapter/13553">https://cloud.tencent.com/developer/chapter/13553</a></p>
+<p>InnoDB 为什么选择使用 B+Tree</p>
+<ul>
+<li>相对于二叉树&#x2F;红黑树，层级更少，搜索效率更高</li>
+<li>对于 B-tree, 无论是叶子节点还是非叶子节点都储存数据，由于一个节点储存为一页，一页中储存的键值减少，指针减少，书的高度更高，性能下降</li>
+<li>相对于 Hash 索引，支持范围查找和排序操作</li>
+</ul>
+<h3 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h3><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>含义</th>
+<th>特点</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主键索引</td>
+<td>针对于表中的主键创建的索引</td>
+<td>默认自动创建，只能有一个</td>
+<td>PRIMARY</td>
+</tr>
+<tr>
+<td>唯一索引</td>
+<td>避免同一个表中某数据列中的值重复</td>
+<td>可以有多个</td>
+<td>UNIQUE</td>
+</tr>
+<tr>
+<td>常规索引</td>
+<td>快速定位特定顺序</td>
+<td>可以有多个</td>
+<td></td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>全文索引查找的是文本中的关键字，而不是比较索引中的值</td>
+<td>可以有多个</td>
+<td>FULLTEXT</td>
+</tr>
+</tbody></table>
+<p>根据储存形式分类</p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>含义</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>聚集索引(Clustered Index)</td>
+<td>将数据存储与索引放到一起，索引结构的叶子节点保存了行数据</td>
+<td>必须有且只有一个</td>
+</tr>
+<tr>
+<td>二级索引(Secondary Index)</td>
+<td>将数据与索引分开存储，索引结构的叶子节点关联的是对应的主键</td>
+<td>可以存在多个</td>
+</tr>
+</tbody></table>
+<p>聚集索引选取规则</p>
+<ul>
+<li>如果存在主键，主键索引就是聚集索引</li>
+<li>如果没有主键，将使用第一个唯一（UNIQUE）索引作为聚集索引</li>
+<li>如果没有主键也没有唯一索引，则 InnoDB 自动生成一个 rowid 作为隐藏的聚集索引</li>
+</ul>
+<p>回表查询：先通过二级索引找到主键值，再通过聚集索引查询数据</p>
+<h3 id="索引语法"><a href="#索引语法" class="headerlink" title="索引语法"></a>索引语法</h3><ul>
+<li><p>创建索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> [<span class="hljs-keyword">UNIQUE</span> <span class="hljs-operator">|</span> FULLTEXT] INDEX index_name <span class="hljs-keyword">ON</span> table_name (index_col_name,...);<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>​		默认为常规索引</p>
+<ul>
+<li><p>查看索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> INDEX <span class="hljs-keyword">FROM</span> table_name;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>删除索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> INDEX index_name <span class="hljs-keyword">ON</span> table_name;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="SQL-性能分析"><a href="#SQL-性能分析" class="headerlink" title="SQL 性能分析"></a>SQL 性能分析</h3><h4 id="SQL-执行频率"><a href="#SQL-执行频率" class="headerlink" title="SQL 执行频率"></a>SQL 执行频率</h4><ul>
+<li><p>查看服务器状态信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> [SESSION <span class="hljs-operator">|</span> <span class="hljs-keyword">GLOBAL</span>] STATUS；<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看数据库 INSERT, UPDATE, DELETE, SELECT 访问频次</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">GLOBAL</span> STATUS <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;Com_______&#x27;</span>;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h4><p>慢查询日志记录了所有执行时间超过指定参数（long_query_time, 单位：秒，默认10秒）的所有日志</p>
+<p>MySQL 的慢查询日志默认没有开启，需要在 MySQL 的配置文件（&#x2F;etc&#x2F;my.cnf）中配置</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment">#开启 MySQL 慢查询日志</span><br><span class="hljs-attr">slow_query_log</span> = <span class="hljs-number">1</span><br><span class="hljs-comment">#设置慢查询日志时间为2秒，SQL yu</span><br></code></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>查看慢查询是否开启</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> VARIABLES <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&#x27;slow_query_log&#x27;</span>;<br></code></pre></td></tr></table></figure></li>
+</ul>
 
                 
               </div>
@@ -493,7 +553,7 @@
   
     <span>></span>
     
-  <a href="/categories/java-%E5%90%8E%E7%AB%AF/java-web/" class="category-chain-item">java web</a>
+  <a href="/categories/java-%E5%90%8E%E7%AB%AF/Mysql/" class="category-chain-item">Mysql</a>
   
   
 
@@ -507,13 +567,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/http/">#http</a>
-      
-    </div>
-  
 </div>
 
 
@@ -522,8 +575,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Http 略解</div>
-      <div>http://mrzzzz1.github.io/2023/03/13/http略解/</div>
+      <div>Mysql 进阶（一）</div>
+      <div>http://mrzzzz1.github.io/2023/03/26/mysql4/</div>
     </div>
     <div class="license-meta">
       
@@ -536,7 +589,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月22日</div>
+          <div>2023年3月26日</div>
         </div>
       
       
@@ -567,18 +620,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/15/servlet/" title="Servlet">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Servlet</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/13/js%E5%9F%BA%E7%A1%80/" title="JS 基础">
-                        <span class="hidden-mobile">JS 基础</span>
+                      <a href="/2023/03/24/mysql3/" title="mysql3">
+                        <span class="hidden-mobile">mysql3</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -601,7 +648,7 @@
         var options = Object.assign(
           {"clientID":"777cb807c5d38bcb8c8c","clientSecret":"35aa09f9079a7fab059604f030a687f57aabb923","repo":"Mrzzzz1.github.io","owner":"Mrzzzz1","admin":["Mrzzzz1"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":true,"createIssueManually":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: 'bbea53e60e83739548123d11f4a0c24c'
+            id: 'fe2397115d104aa80b6ceb094772f74b'
           }
         )
         var gitalk = new Gitalk(options);
@@ -623,234 +670,6 @@
 
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar category-bar" style="margin-left: -1rem">
-    
-
-
-
-
-
-<div class="category-list">
-  
-  
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="java 后端"
-        id="heading-24636e7eaae05a35037fac1cd528c2c1" role="tab" data-toggle="collapse" href="#collapse-24636e7eaae05a35037fac1cd528c2c1"
-        aria-expanded="true"
-      >
-        java 后端
-        <span class="list-group-count">(14)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse show" id="collapse-24636e7eaae05a35037fac1cd528c2c1"
-           role="tabpanel" aria-labelledby="heading-24636e7eaae05a35037fac1cd528c2c1">
-        
-        
-          
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2023/03/07/%E4%BD%BF%E7%94%A8maven%E7%AE%A1%E7%90%86java%E9%A1%B9%E7%9B%AE/" title="使用 Maven 管理 java 项目"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">使用 Maven 管理 java 项目</span>
-        </a>
-      
-    
-  </div>
-
-          
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Mysql"
-        id="heading-9edb3c572b56b91542af659480518681" role="tab" data-toggle="collapse" href="#collapse-9edb3c572b56b91542af659480518681"
-        aria-expanded="false"
-      >
-        Mysql
-        <span class="list-group-count">(4)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-9edb3c572b56b91542af659480518681"
-           role="tabpanel" aria-labelledby="heading-9edb3c572b56b91542af659480518681">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2023/03/21/mysql1/" title="Mysql 基础(一)"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Mysql 基础(一)</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/22/mysql2/" title="Mysql 基础(二)"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Mysql 基础(二)</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/26/mysql4/" title="Mysql 进阶（一）"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Mysql 进阶（一）</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/24/mysql3/" title="mysql3"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">mysql3</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="java web"
-        id="heading-9369773a6e3993b3fc6bbd0c090aff7a" role="tab" data-toggle="collapse" href="#collapse-9369773a6e3993b3fc6bbd0c090aff7a"
-        aria-expanded="true"
-      >
-        java web
-        <span class="list-group-count">(9)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse show" id="collapse-9369773a6e3993b3fc6bbd0c090aff7a"
-           role="tabpanel" aria-labelledby="heading-9369773a6e3993b3fc6bbd0c090aff7a">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2023/03/19/Filter&amp;Listener/" title="Filter&amp;Listener&amp;AJAX&amp;JSON"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Filter&amp;Listener&amp;AJAX&amp;JSON</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/09/HTML/" title="HTML 略解"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">HTML 略解</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/13/http%E7%95%A5%E8%A7%A3/" title="Http 略解"
-           class="list-group-item list-group-item-action
-           active">
-          <span class="category-post">Http 略解</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/13/js%E5%9F%BA%E7%A1%80/" title="JS 基础"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">JS 基础</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/18/Jsp%E5%9F%BA%E7%A1%80/" title="JSP 基础"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">JSP 基础</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/08/Mybatis%20%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" title="Mybatis 导入项目和使用"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Mybatis 导入项目和使用</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/16/Request/" title="Request &amp; Response"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Request &amp; Response</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/15/servlet/" title="Servlet"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Servlet</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2023/03/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA/" title="会话跟踪"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">会话跟踪</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-        
-      </div>
-    </div>
-  
-</div>
-
-
-  </aside>
-
 
     </div>
   </div>

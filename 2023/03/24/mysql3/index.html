@@ -16,15 +16,15 @@
   <meta name="author" content="Mrzzzz1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="JSP JSP： Java Server Pages, Java 服务端页面 一种动态的网页技术，其中既可以定义 HTML , JS, CSS 等静态内容，还可以定义 Java 代码等动态内容 JSP &#x3D; HTML + Java 简化开发，避免在 Servlet 中直接输出 HTML 标签  快速入门 导入 JSP 坐标 123456&lt;dependency&gt;  &lt;gro">
+    <meta name="description" content="Mysql 基础（三）约束 约束是作用在表中字段的规则，用于限制储存在表中的数据  目的：保证表中数据的正确，完整性和有效性  分类      约束 描述 关键字    非空约束 限制该字段数据不能为 NULL NOT NULL   唯一约束 保证该字段的所有数据唯一，不重复 UNIQUE   默认约束 保存数据时，如果没有指定该数据的值，采用默认值 DEFAULT   检查约束 保证字段值满足条">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSP 基础">
-<meta property="og:url" content="http://mrzzzz1.github.io/2023/03/18/Jsp%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="mysql3">
+<meta property="og:url" content="http://mrzzzz1.github.io/2023/03/24/mysql3/index.html">
 <meta property="og:site_name" content="Mrzzzz1">
-<meta property="og:description" content="JSP JSP： Java Server Pages, Java 服务端页面 一种动态的网页技术，其中既可以定义 HTML , JS, CSS 等静态内容，还可以定义 Java 代码等动态内容 JSP &#x3D; HTML + Java 简化开发，避免在 Servlet 中直接输出 HTML 标签  快速入门 导入 JSP 坐标 123456&lt;dependency&gt;  &lt;gro">
+<meta property="og:description" content="Mysql 基础（三）约束 约束是作用在表中字段的规则，用于限制储存在表中的数据  目的：保证表中数据的正确，完整性和有效性  分类      约束 描述 关键字    非空约束 限制该字段数据不能为 NULL NOT NULL   唯一约束 保证该字段的所有数据唯一，不重复 UNIQUE   默认约束 保存数据时，如果没有指定该数据的值，采用默认值 DEFAULT   检查约束 保证字段值满足条">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-18T03:01:34.000Z">
-<meta property="article:modified_time" content="2023-03-22T08:17:47.666Z">
+<meta property="article:published_time" content="2023-03-24T00:29:48.000Z">
+<meta property="article:modified_time" content="2023-03-26T05:48:58.913Z">
 <meta property="article:author" content="Mrzzzz1">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -32,7 +32,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>JSP 基础 - Mrzzzz1</title>
+  <title>mysql3 - Mrzzzz1</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="JSP 基础"></span>
+            <span id="subtitle" data-typed-text="mysql3"></span>
           
         </div>
 
@@ -230,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-18 11:01" pubdate>
-          2023年3月18日 上午
+        <time datetime="2023-03-24 08:29" pubdate>
+          2023年3月24日 早上
         </time>
       </span>
     
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          3.4k 字
         
       </span>
     
@@ -303,130 +303,304 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JSP 基础</h1>
+            <h1 style="display: none">mysql3</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><ul>
-<li>JSP： Java Server Pages, Java 服务端页面</li>
-<li>一种动态的网页技术，其中既可以定义 HTML , JS, CSS 等静态内容，还可以定义 Java 代码等动态内容</li>
-<li>JSP &#x3D; HTML + Java</li>
-<li>简化开发，避免在 Servlet 中直接输出 HTML 标签</li>
-</ul>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ul>
-<li><p>导入 JSP 坐标</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>javax.servlet.jsp<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jsp-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+                <h1 id="Mysql-基础（三）"><a href="#Mysql-基础（三）" class="headerlink" title="Mysql 基础（三）"></a>Mysql 基础（三）</h1><h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><ul>
+<li><p>约束是作用在表中字段的规则，用于限制储存在表中的数据</p>
 </li>
-<li><p>创建 JSP 文件</p>
+<li><p>目的：保证表中数据的正确，完整性和有效性</p>
 </li>
-<li><p>编写 HTML 标签和 Java 代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="hljs-string">&quot;java&quot;</span>  %&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>    &lt;title&gt;Title&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;h1&gt;Hello JSP!&lt;/h1&gt;<br>&lt;%<br>    System.out.println(<span class="hljs-string">&quot;Hello JSP&quot;</span>);<br>%&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="JSP-原理"><a href="#JSP-原理" class="headerlink" title="JSP 原理"></a>JSP 原理</h2><ul>
-<li><p>JSP 本质上是一个 Servlet</p>
-</li>
-<li><p>JSP 在被访问时，由 JSP 容器（Tomcat)将其转换为 Java 文件（Servlet) ,再由 JSP 容器（Tomcat) 将其编译，最终对外提供服务的是字节码文件</p>
+<li><p>分类</p>
 </li>
 </ul>
-<h2 id="JSP-脚本"><a href="#JSP-脚本" class="headerlink" title="JSP 脚本"></a>JSP 脚本</h2><ul>
-<li><p>JSP 脚本用于在 JSP 页面内定义 Java 代码</p>
-</li>
-<li><p>脚本分类</p>
-<ol>
-<li><code>&lt;%...%&gt;</code>: 内容会直接放到 <code>_jspService()</code> 方法中</li>
-<li><code>&lt;%=...&gt;</code>: 内容会放到 <code>out.print()</code> 中，作为 <code>out.print()</code> 的参数</li>
-<li><code>&lt;%!...%&gt;</code>: 内容会放到 <code>_jspService()</code> 方法之外，被类直接包含</li>
-</ol>
-</li>
-</ul>
-<h2 id="JSP-缺点"><a href="#JSP-缺点" class="headerlink" title="JSP 缺点"></a>JSP 缺点</h2><p>由于 JSP 页面内既可以定义 HTML 标签，又可以定义 Java 代码，造成了许多问题</p>
-<ol>
-<li>书写麻烦：特别是复杂的页面</li>
-<li>可读性不高</li>
-<li>复杂度高：运行需要依赖各种环境， JRE，JSP 容器， JavaEE…</li>
-<li>占内存和磁盘： JSP 会自动生成 .java 和 .class 文件占磁盘，运行的 .class 文件占内存</li>
-<li>调试困难： 出错后，需要找到自动生成的 .java 文件进行调试</li>
-<li>不利于团队协作，前端人员不会 java, 后端人员 不精 HTML</li>
-</ol>
-<p>JSP 已经逐渐退出历史舞台…</p>
-<p>Servlet -&gt; JSP -&gt; Servlet + JSP -&gt; Servlet + HTML + ajax</p>
-<h2 id="EL-表达式"><a href="#EL-表达式" class="headerlink" title="EL 表达式"></a>EL 表达式</h2><ul>
-<li><p>Expression Language 表达式语言，用于简化 JSP 页面内的 Java 代码</p>
-</li>
-<li><p>主要功能： 获取数据</p>
-</li>
-<li><p>语法： <code>$&#123;expression&#125;</code></p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsp">$&#123;brands&#125;<span class="hljs-comment">//获取域中存储的 key 为 brands 的数据</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>使用：在 Servlet 中将数据添加到 request 域中并转发给 .jsp 文件，即可在文件中使用数据</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">request.setAttribute(<span class="hljs-string">&quot;status&quot;</span>,<span class="hljs-number">1</span>);<br>request.getRequestDispatcher(<span class="hljs-string">&quot;/jstl.jsp&quot;</span>).forward(request,response);<br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>约束</th>
+<th>描述</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>非空约束</td>
+<td>限制该字段数据不能为 NULL</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>唯一约束</td>
+<td>保证该字段的所有数据唯一，不重复</td>
+<td>UNIQUE</td>
+</tr>
+<tr>
+<td>默认约束</td>
+<td>保存数据时，如果没有指定该数据的值，采用默认值</td>
+<td>DEFAULT</td>
+</tr>
+<tr>
+<td>检查约束</td>
+<td>保证字段值满足条件（8.0.16版本后）</td>
+<td>CHECK</td>
+</tr>
+<tr>
+<td>主键约束</td>
+<td>主键是一行数据的唯一标识，要求非空且唯一</td>
+<td>PRIMARY KEY</td>
+</tr>
+<tr>
+<td>外键约束</td>
+<td>用来让两张表的数据之间建立连接，保证数据的一致性和完整性</td>
+<td>FOREIGN KEY</td>
+</tr>
+</tbody></table>
+<p>示例</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">user</span>(<br>    id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;主键&#x27;</span>,<br>    name <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">UNIQUE</span> COMMENT <span class="hljs-string">&#x27;姓名&#x27;</span>,<br>    age <span class="hljs-type">INT</span> <span class="hljs-keyword">CHECK</span> ( age <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> <span class="hljs-keyword">AND</span> age <span class="hljs-operator">&lt;=</span> <span class="hljs-number">120</span>) COMMENT <span class="hljs-string">&#x27;年龄&#x27;</span>,<br>    status <span class="hljs-type">CHAR</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;1&#x27;</span> COMMENT <span class="hljs-string">&#x27;状态&#x27;</span>,<br>    gender <span class="hljs-type">CHAR</span>(<span class="hljs-number">1</span>) COMMENT <span class="hljs-string">&#x27;性别&#x27;</span><br>) COMMENT <span class="hljs-string">&#x27;用户表&#x27;</span>;<br><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsp">$&#123;status&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><ul>
+<li><p>外键用来让两张表的数据之间建立连接，从而保证数据的一致性和完整性</p>
 </li>
-<li><p>若 JSP 不识别 EL 表达式，需在 JSP 文件开头加上	<code>isELIgnored=&quot;false&quot;</code></p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="hljs-string">&quot;java&quot;</span> isELIgnored=<span class="hljs-string">&quot;false&quot;</span> %&gt;<br></code></pre></td></tr></table></figure>
+<li><p>具有外键的表称为子表（从表），外键关联的表称为父表（主表）</p>
 </li>
-<li><p>若在 EL 表达式中使用类的成员，则自动调用对应的 get() 方法</p>
-</li>
-</ul>
-<h3 id="域对象"><a href="#域对象" class="headerlink" title="域对象"></a>域对象</h3><ul>
-<li>page: 当前页面有效</li>
-<li>request: 当前请求有效</li>
-<li>session: 当前会话有效</li>
-<li>application: 当前应用有效</li>
-</ul>
-<p>EL 表达式获取数据，会依次从这4个域中寻找，直到找到为止</p>
-<h2 id="JSTL-标签"><a href="#JSTL-标签" class="headerlink" title="JSTL 标签"></a>JSTL 标签</h2><ul>
-<li>JSP 标准标签库（ Jsp Standarded Tag Library), 使用标签取代 JSP 页面上的 Java 代码</li>
-</ul>
-<h3 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h3><ul>
-<li><p>导入坐标</p>
-</li>
-<li><pre><code class="xml">&lt;dependency&gt;
-  &lt;groupId&gt;jstl&lt;/groupId&gt;
-  &lt;artifactId&gt;jstl&lt;/artifactId&gt;
-  &lt;version&gt;1.2&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;taglibs&lt;/groupId&gt;
-  &lt;artifactId&gt;standard&lt;/artifactId&gt;
-  &lt;version&gt;1.1.2&lt;/version&gt;
-&lt;/dependency&gt;
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><br>* 在 <span class="hljs-keyword">JSP </span>页面引入 <span class="hljs-keyword">JSTL </span>标签库<br><br>  ```<span class="hljs-keyword">jsp</span><br><span class="hljs-keyword"></span>  &lt;%@ taglib <span class="hljs-keyword">prefix=&quot;c&quot; </span>uri=<span class="hljs-string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span> %&gt;<br></code></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-<li><p>使用 JSTL 标签</p>
-<ol>
-<li><p><code>&lt;c:if test=&quot;&quot;&gt; HTML &lt;/c:if&gt;</code> 对 test 的内容进行 if 判断，为 true 则执行中间的 HTML 语句</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;c:<span class="hljs-keyword">if</span> test=<span class="hljs-string">&quot;$&#123;status == 1&#125;&quot;</span>&gt;<br>	&lt;h1&gt;启用&lt;/h1&gt;<br>&lt;/c:<span class="hljs-keyword">if</span>&gt;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p><code>&lt;c:forEach items = &quot;brands&quot; var =&quot;brand&quot;&gt;HTML&lt;/c:forEach&gt; </code> 遍历 items 数组，对每个成员执行 HTML 语句</p>
-</li>
-</ol>
-</li>
-</ul>
-<h1 id="MVC-模式和三层架构"><a href="#MVC-模式和三层架构" class="headerlink" title="MVC 模式和三层架构"></a>MVC 模式和三层架构</h1><h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ul>
-<li><p>MVC 是一种分层开发模式</p>
-<ol>
-<li>M：Model ，业务模型，处理业务，JavaBean</li>
-<li>V：View ，视图，界面展示，JSP</li>
-<li>C：Controller ，控制器，处理请求，调用模型和视图，Servlet</li>
-</ol>
-</li>
-<li><p>MVC 优点：</p>
+<li><p>语法</p>
 <ul>
-<li>职责单一，互不影响</li>
-<li>有利于分工协作</li>
-<li>有利于组件重用</li>
+<li>添加外键</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql">#建表时定义<br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名(<br>  ...,<br>  [<span class="hljs-keyword">CONSTRAINT</span>] [外键名称] <span class="hljs-keyword">FOREIGN</span> KEY (外键字段名) <span class="hljs-keyword">REFERENCES</span> 主表(主表列名)<br>);<br>#建表后添加<br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> 外键名称 <span class="hljs-keyword">FOREIGN</span> KEY (外键字段名) <span class="hljs-keyword">REFERENCES</span> 主表(主表列名);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>删除外键</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> KEY 外键名;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>若一张表被外键关联，删除该表数据时会检查该数据是否被子表中数据关联，这样可以保证数据的完整性</p>
+</li>
+<li><p>外键删除和更新行为</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>行为</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NO ACTION</td>
+<td>当在父表中删除&#x2F;更新对应记录时，首先会检查该记录是否有对应外键，如果有则不允许删除&#x2F;更新</td>
+</tr>
+<tr>
+<td>RESTRICT</td>
+<td>当在父表中删除&#x2F;更新对应记录时，首先会检查该记录是否有对应外键，如果有则不允许删除&#x2F;更新（同上）</td>
+</tr>
+<tr>
+<td>CASCADE</td>
+<td>当在父表中删除&#x2F;更新对应记录时，首先会检查该记录是否有对应外键，如果有，删除&#x2F;更新子表中对应记录</td>
+</tr>
+<tr>
+<td>SET NULL</td>
+<td>当在父表中删除&#x2F;更新对应记录时，首先会检查该记录是否有对应外键，如果有，将子表中对应记录该外键设为 NULL</td>
+</tr>
+<tr>
+<td>SET DEFAULT</td>
+<td>父表有变更时，子表将外键列设为一个默认值（ innodb 不支持）</td>
+</tr>
+</tbody></table>
+<p>设置外键行为</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> 外键名称 <span class="hljs-keyword">FOREIGN</span> KEY (外键字段名) <span class="hljs-keyword">REFERENCES</span> 主表(主表字段名) <br><span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> [更新时行为] <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> [删除时行为];<br></code></pre></td></tr></table></figure>
+
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><h3 id="表间关系"><a href="#表间关系" class="headerlink" title="表间关系"></a>表间关系</h3><p>根据业务关系设计表间关系，分为三种</p>
+<ul>
+<li><p>一对多（多对一）</p>
+<p>员工和部门的关系</p>
+<p>在多的一方（员工）建立外键，指向一的一方的主键</p>
+</li>
+<li><p>多对多</p>
+<p>学生和课程的关系</p>
+<p>建立第三张中间表，中间表至少包含两个外键，分别关联两方主键</p>
+</li>
+<li><p>一对一</p>
+<p>学生和学生信息的关系</p>
+<p>可以进行表拆分，提升检索效率，在任意一方添加外键，关联另外一方的主键，设置外键为唯一（ UNIQUE ）</p>
+</li>
+</ul>
+<h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><p>从多张表中进行数据查询</p>
+<h4 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h4><p>查询两张表交集部分数据</p>
+<ul>
+<li><p>隐式内连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> 字段列表 <span class="hljs-keyword">FROM</span> 表<span class="hljs-number">1</span> [别名<span class="hljs-number">1</span>],表<span class="hljs-number">2</span> [别名<span class="hljs-number">2</span>] <span class="hljs-keyword">WHERE</span> 连接条件...;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>显式内连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> 字段列表 <span class="hljs-keyword">FROM</span> 表<span class="hljs-number">1</span>[别名<span class="hljs-number">1</span>] [<span class="hljs-keyword">INNER</span>] <span class="hljs-keyword">JOIN</span> 表<span class="hljs-number">2</span> [别名<span class="hljs-number">2</span>] <span class="hljs-keyword">ON</span> 连接条件...;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h4><ul>
+<li><p>左外连接，查询左表所有数据和两张表交集部分数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> 字段列表 <span class="hljs-keyword">FROM</span> 表<span class="hljs-number">1</span> <span class="hljs-keyword">LEFT</span> [<span class="hljs-keyword">OUTER</span>] <span class="hljs-keyword">JOIN</span> 表<span class="hljs-number">2</span> <span class="hljs-keyword">ON</span> 条件...;<br></code></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>右外连接，查询右表所有数据和两张表交集部分数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> 字段列表 <span class="hljs-keyword">FROM</span> 表<span class="hljs-number">1</span> <span class="hljs-keyword">RIGHT</span> [<span class="hljs-keyword">OUTER</span>] <span class="hljs-keyword">JOIN</span> 表<span class="hljs-number">2</span> <span class="hljs-keyword">ON</span> 条件...;<br></code></pre></td></tr></table></figure>
+
+<p>通过替换两表顺序，左外连接和右外连接可起到相同效果</p>
+</li>
+</ul>
+<h4 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h4><p>当前表与自身连接查询，自连接时必须使用表别名，自连接既可使用内连接，也可使用外连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> 字段列表 <span class="hljs-keyword">FROM</span> 表A 别名A <span class="hljs-keyword">JOIN</span> 表A 别名B <span class="hljs-keyword">ON</span> 条件;<br></code></pre></td></tr></table></figure>
+
+<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><ul>
+<li><p>UNION : 把多次查询的结果合并起来，形成一个新的查询结果集</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> 字段列表 <span class="hljs-keyword">FROM</span> 表A...<br><span class="hljs-keyword">UNION</span> [<span class="hljs-keyword">ALL</span>]<br><span class="hljs-keyword">SELECT</span> 字段列表 <span class="hljs-keyword">FROM</span> 表B...;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>加 ALL 关键字时结果不去重，不加 ALL 关键字时结果去重</li>
+<li>多张表的查询字段列表必须保持一致</li>
 </ul>
 </li>
 </ul>
-<h2 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h2><ul>
-<li>表现层：接收请求，封装数据，调用业务逻辑层，响应数据</li>
-<li>业务逻辑层：对业务逻辑进行封装，组合数据访问层层中的基本功能，形成复杂的业务逻辑功能</li>
-<li>数据访问层（持久层）：对数据库进行 CRUD 基本操作</li>
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p>SQL 语句中嵌套 SQL 语句，称为嵌套查询，又称子查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> t1 <span class="hljs-keyword">WHERE</span> column1 <span class="hljs-operator">=</span> (<span class="hljs-keyword">SELECT</span> column1 <span class="hljs-keyword">FROM</span> t2);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>字查询外部的语句可以是 INSERT&#x2F;UPDATE&#x2F;DELETE&#x2F;SELECT 的任何一个</li>
+</ul>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>根据子查询结果不同，分为</p>
+<ul>
+<li>标量子查询：子查询返回结果为单个值</li>
+<li>列子查询：子查询返回结果为一列</li>
+<li>行子查询：子查询返回结果为一行</li>
+<li>表子查询：子查询放回结果为多行多列</li>
+</ul>
+<p>根据子查询位置不同，分为：WHERE 之后，FROM 之后，SELECT 之后</p>
+<h4 id="标量子查询"><a href="#标量子查询" class="headerlink" title="标量子查询"></a>标量子查询</h4><p>常用操作符： &#x3D;  &lt;&gt;  &gt;  &gt;&#x3D;  &lt;  &lt;&#x3D;</p>
+<p>子查询通常放在 WHERE 之后</p>
+<h4 id="列子查询"><a href="#列子查询" class="headerlink" title="列子查询"></a>列子查询</h4><p>常用操作符：IN     NOT IN     ANY    SOME     ALL</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IN</td>
+<td>在指定的集合范围内，多选一</td>
+</tr>
+<tr>
+<td>NOT IN</td>
+<td>不在指定的集合范围内</td>
+</tr>
+<tr>
+<td>ANY</td>
+<td>集合中任意一个满足即可（比…中任意一个…)</td>
+</tr>
+<tr>
+<td>SOME</td>
+<td>同 ANY</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>集合中所用值都必须满足（比…都…）</td>
+</tr>
+</tbody></table>
+<h3 id="行子查询"><a href="#行子查询" class="headerlink" title="行子查询"></a>行子查询</h3><p>常用操作符  &#x3D;   &lt;&gt;    IN    NOT  IN</p>
+<h3 id="表子查询"><a href="#表子查询" class="headerlink" title="表子查询"></a>表子查询</h3><p>通常把表子查询的结果作为临时表和其他表一起查询</p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ul>
+<li>事务是一组操作的集合，它是一个不可分割的工作单位，事务会把所有操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败</li>
+<li>MySQL 默认自动提交事务，当执行一条 DML 语句，MySQL 会立即隐式提交事务，一条 语句对应一次事务</li>
+</ul>
+<h3 id="事务操作"><a href="#事务操作" class="headerlink" title="事务操作"></a>事务操作</h3><ul>
+<li><p>查看&#x2F;设置事务默认提交方式</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql">#查询事务提交方式 <span class="hljs-number">0</span>为手动提交，<span class="hljs-number">1</span>为自动提交<br><span class="hljs-keyword">SELECT</span> @<span class="hljs-variable">@autocommit</span>;<br>#设置为手动提交<br><span class="hljs-keyword">SET</span> @<span class="hljs-variable">@autocommit</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>提交事务</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">COMMIT</span>;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>回滚事务</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ROLLBACK</span>;<br></code></pre></td></tr></table></figure>
+
+<p>回滚到上一次提交事务时的状态</p>
+</li>
+<li><p>手动开启事务</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql">#两种方式<br><span class="hljs-keyword">START</span> TRANSACTION;<br><span class="hljs-keyword">BEGIN</span>;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="事务四大特性-ACID"><a href="#事务四大特性-ACID" class="headerlink" title="事务四大特性 ACID"></a>事务四大特性 ACID</h3><ul>
+<li>原子性( Automicity ): 事务是不可分割的最小操作单元，要么全部成功，要么全部失败</li>
+<li>一致性( Consistency ): 事务完成后，所有的数据都保持一致状态</li>
+<li>隔离性( Isolation ): 数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行</li>
+<li>持久性( Durability ): 事务一旦提交或回滚，它对数据库中的数据的改变就是永久的</li>
+</ul>
+<h3 id="并发事务问题"><a href="#并发事务问题" class="headerlink" title="并发事务问题"></a>并发事务问题</h3><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>脏读</td>
+<td>一个事务读到另外一个事务还没有提交的数据</td>
+</tr>
+<tr>
+<td>不可重复读</td>
+<td>一个事务先后读取同一条记录，但两次读到的数据不同</td>
+</tr>
+<tr>
+<td>幻读</td>
+<td>一个事务按照条件查询数据时，没有对应的数据行，但在插入数据时，又发现这行数据已经存在，好像出现了“幻影”</td>
+</tr>
+</tbody></table>
+<h3 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别"></a>事务的隔离级别</h3><table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Read uncommitted</td>
+<td>☑️</td>
+<td>☑️</td>
+<td>☑️</td>
+</tr>
+<tr>
+<td>Read committed</td>
+<td>✖️</td>
+<td>☑️</td>
+<td>☑️</td>
+</tr>
+<tr>
+<td>Repeatable Read(Mysql 默认)</td>
+<td>✖️</td>
+<td>✖️</td>
+<td>☑️</td>
+</tr>
+<tr>
+<td>Serializable(串行化)</td>
+<td>✖️</td>
+<td>✖️</td>
+<td>✖️</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>☑️ 表示该隔离级别下会出现该问题，✖️表示该隔离级别下不会出现该问题</p>
+</li>
+<li><p>从上到下，隔离级别越高，性能越差</p>
+</li>
+<li><p>查看事务的隔离级别</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> @<span class="hljs-variable">@TRANSACTION</span>_ISOLATION;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>设置事务隔离级别</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SET</span> [SESSION <span class="hljs-operator">|</span> <span class="hljs-keyword">GLOBAL</span>] TRANSACTION ISOLATION LEVEL &#123; Read uncommitted <span class="hljs-operator">|</span> Read committed <span class="hljs-operator">|</span> Repeatable Read <span class="hljs-operator">|</span> Serializable &#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>不区分大小写</li>
+<li>SESSION 表示当前会话，GLOBAL 表示全局</li>
+</ul>
+</li>
 </ul>
 
                 
@@ -451,7 +625,7 @@
   
     <span>></span>
     
-  <a href="/categories/java-%E5%90%8E%E7%AB%AF/java-web/" class="category-chain-item">java web</a>
+  <a href="/categories/java-%E5%90%8E%E7%AB%AF/Mysql/" class="category-chain-item">Mysql</a>
   
   
 
@@ -473,8 +647,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>JSP 基础</div>
-      <div>http://mrzzzz1.github.io/2023/03/18/Jsp基础/</div>
+      <div>mysql3</div>
+      <div>http://mrzzzz1.github.io/2023/03/24/mysql3/</div>
     </div>
     <div class="license-meta">
       
@@ -487,7 +661,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年3月22日</div>
+          <div>2023年3月26日</div>
         </div>
       
       
@@ -518,9 +692,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/18/%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA/" title="会话跟踪">
+                      <a href="/2023/03/26/mysql4/" title="Mysql 进阶（一）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">会话跟踪</span>
+                        <span class="hidden-mobile">Mysql 进阶（一）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -528,8 +702,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/16/Request/" title="Request &amp; Response">
-                        <span class="hidden-mobile">Request &amp; Response</span>
+                      <a href="/2023/03/22/mysql2/" title="Mysql 基础(二)">
+                        <span class="hidden-mobile">Mysql 基础(二)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -552,7 +726,7 @@
         var options = Object.assign(
           {"clientID":"777cb807c5d38bcb8c8c","clientSecret":"35aa09f9079a7fab059604f030a687f57aabb923","repo":"Mrzzzz1.github.io","owner":"Mrzzzz1","admin":["Mrzzzz1"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":true,"createIssueManually":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '0ff986ef5a6ec5791f249ebb556b255f'
+            id: 'b9fe40c17a51279ddb2f672ed4837e9a'
           }
         )
         var gitalk = new Gitalk(options);
@@ -624,17 +798,17 @@
     
     
     <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
+      <a class="category-subitem 
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Mysql"
         id="heading-9edb3c572b56b91542af659480518681" role="tab" data-toggle="collapse" href="#collapse-9edb3c572b56b91542af659480518681"
-        aria-expanded="false"
+        aria-expanded="true"
       >
         Mysql
         <span class="list-group-count">(4)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse " id="collapse-9edb3c572b56b91542af659480518681"
+      <div class="category-collapse collapse show" id="collapse-9edb3c572b56b91542af659480518681"
            role="tabpanel" aria-labelledby="heading-9edb3c572b56b91542af659480518681">
         
         
@@ -673,7 +847,7 @@
       
         <a href="/2023/03/24/mysql3/" title="mysql3"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">mysql3</span>
         </a>
       
@@ -688,17 +862,17 @@
     
     
     <div class="category-sub row nomargin-x">
-      <a class="category-subitem 
+      <a class="category-subitem collapsed
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="java web"
         id="heading-9369773a6e3993b3fc6bbd0c090aff7a" role="tab" data-toggle="collapse" href="#collapse-9369773a6e3993b3fc6bbd0c090aff7a"
-        aria-expanded="true"
+        aria-expanded="false"
       >
         java web
         <span class="list-group-count">(9)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-9369773a6e3993b3fc6bbd0c090aff7a"
+      <div class="category-collapse collapse " id="collapse-9369773a6e3993b3fc6bbd0c090aff7a"
            role="tabpanel" aria-labelledby="heading-9369773a6e3993b3fc6bbd0c090aff7a">
         
         
@@ -746,7 +920,7 @@
       
         <a href="/2023/03/18/Jsp%E5%9F%BA%E7%A1%80/" title="JSP 基础"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">JSP 基础</span>
         </a>
       

@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mrzzzz1.github.io/2023/03/26/mysql4/</loc>
+    
+    <lastmod>2023-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://mrzzzz1.github.io/2023/03/24/mysql3/</loc>
+    
+    <lastmod>2023-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://mrzzzz1.github.io/2023/03/22/mysql2/</loc>
     
     <lastmod>2023-03-24</lastmod>
@@ -148,7 +166,7 @@
 
   <url>
     <loc>http://mrzzzz1.github.io/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -156,84 +174,84 @@
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/Web/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/HTML/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/Mybatis/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/java/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/SQL/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/http/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/js/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/Maven/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/hexo/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/macOS/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -242,35 +260,35 @@
   
   <url>
     <loc>http://mrzzzz1.github.io/categories/java-%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/categories/java-%E5%90%8E%E7%AB%AF/java-web/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/categories/java-%E5%90%8E%E7%AB%AF/Mysql/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/categories/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://mrzzzz1.github.io/categories/%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
